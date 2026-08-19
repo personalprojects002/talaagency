@@ -5,12 +5,11 @@ import React from 'react';
 export default function Hero() {
   return (
     <section className="relative pt-28 pb-14 bg-white overflow-hidden">
-      {/* Container with max-w-7xl */}
       <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
         
         <div className="grid lg:grid-cols-12 gap-8 items-center">
           
-          {/* Left Headline & Content with 50px left padding */}
+          {/* Left Headline & Content */}
           <div className="lg:col-span-7 space-y-4 text-center lg:text-left pl-4 lg:pl-[50px]">
             
             {/* Compact Headline */}
@@ -38,11 +37,11 @@ export default function Hero() {
               </a>
             </div>
 
-            {/* Agency Trust Badges with 25+ Brands Served */}
+            {/* Trust Badges matching user exact request */}
             <div className="pt-4 grid grid-cols-3 gap-3 text-center lg:text-left border-t border-gray-100 max-w-md">
               <div>
                 <h4 className="font-gothic text-2xl font-normal text-sociallyin-blue">25+</h4>
-                <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wider font-sans">Brands Served</p>
+                <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wider font-sans">Brands & Projects</p>
               </div>
               <div>
                 <h4 className="font-gothic text-2xl font-normal text-sociallyin-yellow">100%</h4>
@@ -56,16 +55,11 @@ export default function Hero() {
 
           </div>
 
-          {/* Right Side Oval Blob cutout & phone mockup */}
+          {/* Right Side Oval Blob & Phone mockup */}
           <div className="lg:col-span-5 relative flex flex-col items-center justify-center">
-            
-            {/* Blue Blob & Phone Container */}
             <div className="relative w-full max-w-xs aspect-[4/5] flex items-center justify-center">
-              
-              {/* Organic Blue Blob Shape */}
               <div className="absolute inset-2 bg-sociallyin-blue rounded-[40%_60%_70%_30%/40%_50%_60%_50%] shadow-lg" />
 
-              {/* Smartphone Mockup */}
               <div className="relative z-10 w-44 h-80 rounded-[32px] bg-black border-4 border-white shadow-2xl overflow-hidden">
                 <img 
                   src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=600&h=900&fit=crop" 
@@ -77,14 +71,11 @@ export default function Hero() {
                   <p className="font-gothic text-base text-white leading-none uppercase">High-ROAS Ad Strategy</p>
                 </div>
               </div>
-
             </div>
 
-            {/* Hand-drawn line accent */}
             <svg className="w-full max-w-xs h-5 text-gray-800 -mt-2" viewBox="0 0 300 20" fill="none">
               <path d="M5 15 C 80 5, 220 25, 295 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
             </svg>
-
           </div>
 
         </div>

@@ -26,7 +26,7 @@ const coursesData = [
   },
   {
     title: 'SOCIAL MEDIA MARKETING & META ADS',
-    desc: 'Campaign setup, Facebook/Instagram ad targeting, cost-per-lead optimization, Notion CRM integration, and client acquisition.',
+    desc: 'Campaign setup, Facebook/Instagram ad targeting, cost-per-lead optimization, and client acquisition.',
     duration: '2 Months Intensive',
     level: 'Career Track'
   }
@@ -63,7 +63,7 @@ export default function AcademyPage() {
 
             <div className="sociallyin-card p-6 text-center bg-[#F4F8FE] border-2 border-[#C2DBFE]">
               <h3 className="font-gothic text-4xl text-sociallyin-yellow">100% PRACTICAL</h3>
-              <p className="text-sm font-bold text-slate-700 font-sans uppercase">Real Studio Equipment & Client Projects</p>
+              <p className="text-sm font-bold text-slate-700 font-sans uppercase">Real Practical Work & Client Projects</p>
             </div>
           </div>
 
@@ -98,20 +98,20 @@ export default function AcademyPage() {
 
                   <div className="pt-2 flex items-center gap-2 text-xs font-bold text-emerald-700">
                     <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                    <span>Includes Hands-on Studio Practice</span>
+                    <span>Includes Hands-on Practical Projects</span>
                   </div>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* High-Contrast Visible CTA Banner for Academy */}
-          <div className="sociallyin-card p-8 sm:p-12 bg-[#0F172A] text-white rounded-3xl space-y-6 text-center max-w-3xl mx-auto shadow-2xl border-4 border-[#FFD000]">
-            <h3 className="font-gothic text-3xl sm:text-4xl lg:text-5xl font-normal uppercase leading-tight text-[#FFD000]">
+          {/* CTA Box with High-Visibility Text */}
+          <div className="sociallyin-card p-8 sm:p-12 bg-[#F4F8FE] text-slate-900 rounded-3xl space-y-6 text-center max-w-3xl mx-auto shadow-2xl border-4 border-sociallyin-blue">
+            <h3 className="font-gothic text-3xl sm:text-4xl lg:text-5xl font-normal uppercase leading-tight text-sociallyin-blue">
               READY TO LEARN HIGH-INCOME CREATOR SKILLS?
             </h3>
             
-            <p className="text-sm sm:text-base text-slate-200 font-sans max-w-xl mx-auto font-medium leading-relaxed">
+            <p className="text-base sm:text-lg text-slate-900 font-sans max-w-xl mx-auto font-bold leading-relaxed">
               Join our upcoming hands-on physical & online batch in Kamoke, Gujranwala. Get trained directly on real studio camera gear and client video projects.
             </p>
 

@@ -24,23 +24,17 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 py-2.5 transition-all">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 py-2 transition-all">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         <div className="flex items-center justify-between">
           
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5 group pl-[20px]">
-            <div className="w-8 h-8 rounded-lg bg-sociallyin-blue flex items-center justify-center font-gothic text-lg text-white font-normal leading-none shadow-sm group-hover:bg-sociallyin-darkBlue transition-colors shrink-0">
-              NVC
-            </div>
-            <div className="flex flex-col">
-              <span className="font-gothic text-xl sm:text-2xl font-normal text-sociallyin-blue tracking-wide group-hover:text-sociallyin-darkBlue transition-colors leading-none">
-                Next Vision Creators
-              </span>
-              <span className="text-[9px] font-bold text-gray-500 uppercase tracking-widest font-sans -mt-0.5">
-                Social Media Agency
-              </span>
-            </div>
+          {/* Header Logo using Uploaded Camera Logo */}
+          <Link href="/" className="flex items-center gap-2 group pl-[20px]">
+            <img 
+              src="/images/nvc-camera-logo.png" 
+              alt="Next Vision Creators" 
+              className="h-10 w-auto object-contain shrink-0 hover:scale-105 transition-transform" 
+            />
           </Link>
 
           {/* Desktop Nav Links */}
@@ -61,7 +55,7 @@ export default function Navbar() {
                 )}
               </Link>
 
-              {/* ABOUT Dropdown Menu - Styled identically to SERVICES sub-items */}
+              {/* ABOUT Dropdown Menu */}
               {activeDropdown === 'about' && (
                 <div className="absolute top-full left-0 w-64 p-3.5 nav-dropdown-box animate-dropdown z-50 bg-white shadow-2xl border-2 border-sociallyin-blue rounded-xl">
                   <div className="space-y-1 font-sans">
@@ -95,7 +89,7 @@ export default function Navbar() {
                 )}
               </Link>
 
-              {/* SERVICES Dropdown Menu (6 Service Names Only - Click redirects to details) */}
+              {/* SERVICES Dropdown Menu */}
               {activeDropdown === 'services' && (
                 <div className="absolute top-full -left-4 w-80 p-3.5 nav-dropdown-box animate-dropdown z-50 bg-white shadow-2xl border-2 border-sociallyin-blue rounded-xl">
                   <div className="space-y-1 font-sans">

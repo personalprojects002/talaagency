@@ -7,6 +7,7 @@ import ServicesGrid from '@/components/ServicesGrid';
 import BudgetPlanner from '@/components/BudgetPlanner';
 import StudioShowcase from '@/components/StudioShowcase';
 import WhyChooseSection from '@/components/WhyChooseSection';
+import TeamSection from '@/components/TeamSection';
 import CaseStudies from '@/components/CaseStudies';
 import Testimonials from '@/components/Testimonials';
 import ProposalForm from '@/components/ProposalForm';
@@ -23,6 +24,7 @@ export default function HomePage() {
       <BudgetPlanner />
       <StudioShowcase />
       <WhyChooseSection />
+      <TeamSection />
       <CaseStudies />
       <Testimonials />
       <ProposalForm />
