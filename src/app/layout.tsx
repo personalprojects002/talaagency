@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import WhatsAppButton from '@/components/WhatsAppButton';
 
 export const metadata: Metadata = {
   title: 'NVC | Full-Service Social Media & Growth Agency',
-  description: 'Full-service social media marketing, in-house video studio production, and growth strategies for immigration consultants, law firms, educational academies, e-commerce brands, and corporate businesses.',
+  description: 'Full-service social media marketing, video production, and growth strategies for immigration consultants, law firms, educational academies, e-commerce brands, and corporate businesses.',
 };
 
 export default function RootLayout({
@@ -23,6 +24,7 @@ export default function RootLayout({
       </head>
       <body className="bg-white text-[#0B132B] antialiased selection:bg-[#FFD000] selection:text-black">
         {children}
+        <WhatsAppButton />
       </body>
     </html>
   );

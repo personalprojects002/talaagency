@@ -2,69 +2,15 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { ChevronDown, ChevronUp, Menu, X, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { ChevronDown, ChevronUp, Menu, X } from 'lucide-react';
 
 const navbar6Services = [
-  {
-    title: 'SOCIAL MEDIA STRATEGY & CONSULTING',
-    href: '/services#strategy',
-    bullets: [
-      'Building Your Roadmap for Social Success',
-      'Target Audience & Competitor Analysis',
-      'Platform Selection & Content Pillars',
-      'ROI & Lead Goal Setting'
-    ]
-  },
-  {
-    title: 'SOCIAL CONTENT PRODUCTION',
-    href: '/services#content',
-    bullets: [
-      'In-House 4K Studio Video Production',
-      'Engaging Reels, Shorts & Ad Creatives',
-      'Graphic Design, Branding & Thumbnails',
-      'Custom Scripting & Post-Production'
-    ]
-  },
-  {
-    title: 'SOCIAL MEDIA MANAGEMENT & COMMUNITY',
-    href: '/services#management',
-    bullets: [
-      'Consistent Posting Across All Platforms',
-      'Proactive Community DM & Comment Management',
-      'Brand Voice & Reputation Monitoring',
-      'Monthly Analytics & Growth Audits'
-    ]
-  },
-  {
-    title: 'PAID SOCIAL ADVERTISING',
-    href: '/services#paid-ads',
-    bullets: [
-      'Targeted Lead Campaigns for Consultants & Lawyers',
-      'Meta, TikTok & Google Ads Optimization',
-      'A/B Creative Testing & Retargeting',
-      'High-ROAS E-Commerce Sales Funnels'
-    ]
-  },
-  {
-    title: 'INFLUENCER & YOUTUBE AUTOMATION',
-    href: '/services#automation',
-    bullets: [
-      'YouTube Channel Setup & Monetization',
-      'High-CTR Custom Thumbnail Design',
-      'Influencer Vetting & Campaign Strategy',
-      'Performance Measurement & Reporting'
-    ]
-  },
-  {
-    title: 'WEBSITE & NOTION CRM INTEGRATION',
-    href: '/services#integration',
-    bullets: [
-      'Custom Responsive Next.js / React Websites',
-      'Direct WhatsApp Consultation Booking',
-      'Automated Notion Database Lead Capture',
-      'Mobile Conversion Funnel Optimization'
-    ]
-  }
+  { label: 'SOCIAL MEDIA STRATEGY & CONSULTING', href: '/services#strategy' },
+  { label: 'SOCIAL CONTENT PRODUCTION', href: '/services#content' },
+  { label: 'SOCIAL MEDIA MANAGEMENT & COMMUNITY', href: '/services#management' },
+  { label: 'PAID SOCIAL ADVERTISING', href: '/services#paid-ads' },
+  { label: 'INFLUENCER & YOUTUBE AUTOMATION', href: '/services#automation' },
+  { label: 'WEBSITE & NOTION CRM INTEGRATION', href: '/services#integration' },
 ];
 
 const aboutDropdownItems = [
@@ -115,7 +61,7 @@ export default function Navbar() {
                 )}
               </Link>
 
-              {/* ABOUT Dropdown Modal */}
+              {/* ABOUT Dropdown Menu */}
               {activeDropdown === 'about' && (
                 <div className="absolute top-full left-0 w-64 p-4 nav-dropdown-box animate-dropdown z-50">
                   <div className="space-y-2 font-gothic text-base font-normal tracking-wide text-sociallyin-textDark">
@@ -134,7 +80,7 @@ export default function Navbar() {
               )}
             </div>
 
-            {/* SERVICES Dropdown Trigger - Opens 6 Core Services Modal */}
+            {/* SERVICES Dropdown Trigger - Displays 6 Service Names Only */}
             <div 
               className="relative py-1"
               onMouseEnter={() => setActiveDropdown('services')}
@@ -149,55 +95,20 @@ export default function Navbar() {
                 )}
               </Link>
 
-              {/* SERVICES Dropdown Modal Box - EXACT 6 SERVICES ONLY */}
+              {/* SERVICES Dropdown Menu (6 Service Names Only - Click redirects to details) */}
               {activeDropdown === 'services' && (
-                <div className="absolute top-full -left-64 sm:-left-40 w-[680px] p-6 nav-dropdown-box animate-dropdown z-50 bg-white/98 shadow-2xl border-2 border-sociallyin-blue rounded-2xl">
-                  <div className="grid grid-cols-2 gap-4 text-left font-sans">
+                <div className="absolute top-full -left-4 w-80 p-3.5 nav-dropdown-box animate-dropdown z-50 bg-white shadow-2xl border-2 border-sociallyin-blue rounded-xl">
+                  <div className="space-y-1 font-sans">
                     {navbar6Services.map((srv, idx) => (
-                      <div 
+                      <Link
                         key={idx}
-                        className="p-3.5 rounded-xl bg-[#F4F8FE] border border-[#C2DBFE] hover:border-sociallyin-blue transition-all space-y-2 flex flex-col justify-between"
+                        href={srv.href}
+                        onClick={() => setActiveDropdown(null)}
+                        className="block p-2.5 rounded-lg text-xs font-bold text-slate-800 hover:text-sociallyin-blue hover:bg-blue-50 transition-all border-b border-gray-100 last:border-0 uppercase tracking-wide"
                       >
-                        <div className="space-y-1.5">
-                          <h4 className="font-gothic text-lg font-normal text-sociallyin-blue uppercase leading-tight">
-                            {srv.title}
-                          </h4>
-
-                          <div className="space-y-1">
-                            {srv.bullets.map((b, bIdx) => (
-                              <div key={bIdx} className="flex items-start gap-1.5 text-[11px] font-semibold text-slate-700 leading-tight">
-                                <CheckCircle2 className="w-3 h-3 text-sociallyin-blue shrink-0 mt-0.5" />
-                                <span>{b}</span>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-
-                        <div className="pt-1">
-                          <Link
-                            href="/#proposal-form"
-                            onClick={() => setActiveDropdown(null)}
-                            className="font-gothic text-xs text-sociallyin-blue hover:text-sociallyin-darkBlue uppercase tracking-wider inline-flex items-center gap-1 font-normal underline underline-offset-2"
-                          >
-                            <span>REQUEST STRATEGY</span>
-                            <ArrowRight className="w-3 h-3" />
-                          </Link>
-                        </div>
-                      </div>
+                        {srv.label}
+                      </Link>
                     ))}
-                  </div>
-
-                  <div className="mt-4 pt-3 border-t border-gray-200 text-center flex items-center justify-between">
-                    <span className="text-xs font-bold text-slate-600 font-sans">
-                      Need a customized omnichannel strategy?
-                    </span>
-                    <Link
-                      href="/services"
-                      onClick={() => setActiveDropdown(null)}
-                      className="btn-yellow text-xs px-4 py-1.5 rounded-lg"
-                    >
-                      VIEW ALL 6 SERVICES PAGE
-                    </Link>
                   </div>
                 </div>
               )}
@@ -240,26 +151,20 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white border-b border-gray-200 px-4 pt-3 pb-5 space-y-3 font-gothic text-xl">
+        <div className="lg:hidden bg-white border-b border-gray-200 px-4 pt-3 pb-5 space-y-2.5 font-gothic text-xl">
           <Link href="/#about" onClick={() => setMobileMenuOpen(false)} className="block text-sociallyin-blue">ABOUT</Link>
           <Link href="/services" onClick={() => setMobileMenuOpen(false)} className="block text-sociallyin-blue">SERVICES</Link>
           
-          <div className="pl-3 border-l-2 border-sociallyin-blue space-y-3 font-sans text-xs">
+          <div className="pl-3 border-l-2 border-sociallyin-blue space-y-1.5 font-sans text-xs">
             {navbar6Services.map((item, idx) => (
-              <div key={idx} className="space-y-1">
-                <Link 
-                  href={item.href} 
-                  onClick={() => setMobileMenuOpen(false)} 
-                  className="font-gothic text-base text-sociallyin-blue block uppercase"
-                >
-                  • {item.title}
-                </Link>
-                <div className="pl-3 space-y-0.5 text-[11px] text-slate-600 font-medium">
-                  {item.bullets.map((b, bIdx) => (
-                    <div key={bIdx}>- {b}</div>
-                  ))}
-                </div>
-              </div>
+              <Link 
+                key={idx}
+                href={item.href} 
+                onClick={() => setMobileMenuOpen(false)} 
+                className="block text-slate-800 font-bold hover:text-sociallyin-blue uppercase py-1"
+              >
+                • {item.label}
+              </Link>
             ))}
           </div>
 
