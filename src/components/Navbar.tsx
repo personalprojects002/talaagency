@@ -30,47 +30,47 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 py-3 transition-all">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 py-2.5 transition-all">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         <div className="flex items-center justify-between">
           
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group pl-[20px]">
-            <div className="w-10 h-10 rounded-xl bg-sociallyin-blue flex items-center justify-center font-gothic text-2xl text-white font-normal leading-none shadow-sm group-hover:bg-sociallyin-darkBlue transition-colors shrink-0">
+          {/* Compact Logo */}
+          <Link href="/" className="flex items-center gap-2.5 group pl-[20px]">
+            <div className="w-8 h-8 rounded-lg bg-sociallyin-blue flex items-center justify-center font-gothic text-lg text-white font-normal leading-none shadow-sm group-hover:bg-sociallyin-darkBlue transition-colors shrink-0">
               NVC
             </div>
             <div className="flex flex-col">
-              <span className="font-gothic text-2xl sm:text-3xl font-normal text-sociallyin-blue tracking-wide group-hover:text-sociallyin-darkBlue transition-colors leading-none">
+              <span className="font-gothic text-xl sm:text-2xl font-normal text-sociallyin-blue tracking-wide group-hover:text-sociallyin-darkBlue transition-colors leading-none">
                 Next Vision Creators
               </span>
-              <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest font-sans -mt-0.5">
+              <span className="text-[9px] font-bold text-gray-500 uppercase tracking-widest font-sans -mt-0.5">
                 Social Media Agency
               </span>
             </div>
           </Link>
 
-          {/* Desktop Nav Links */}
-          <nav className="hidden lg:flex items-center gap-6 font-gothic text-2xl font-normal text-sociallyin-blue tracking-wider uppercase pr-[20px]">
+          {/* Compact Desktop Nav Links */}
+          <nav className="hidden lg:flex items-center gap-5 font-gothic text-lg font-normal text-sociallyin-blue tracking-wider uppercase pr-[20px]">
             
             {/* ABOUT Dropdown Trigger */}
             <div 
-              className="relative py-1.5"
+              className="relative py-1"
               onMouseEnter={() => setActiveDropdown('about')}
               onMouseLeave={() => setActiveDropdown(null)}
             >
               <Link href="/#about" className="flex items-center gap-0.5 hover:text-sociallyin-darkBlue transition-colors">
                 <span>ABOUT</span>
                 {activeDropdown === 'about' ? (
-                  <ChevronUp className="w-3.5 h-3.5 text-sociallyin-blue stroke-[3]" />
+                  <ChevronUp className="w-3 h-3 text-sociallyin-blue stroke-[3]" />
                 ) : (
-                  <ChevronDown className="w-3.5 h-3.5 text-sociallyin-blue stroke-[3]" />
+                  <ChevronDown className="w-3 h-3 text-sociallyin-blue stroke-[3]" />
                 )}
               </Link>
 
               {/* ABOUT Dropdown Dialog Box */}
               {activeDropdown === 'about' && (
-                <div className="absolute top-full left-0 w-72 p-5 nav-dropdown-box animate-dropdown z-50">
-                  <div className="space-y-3 font-gothic text-xl font-normal tracking-wide text-sociallyin-textDark">
+                <div className="absolute top-full left-0 w-64 p-4 nav-dropdown-box animate-dropdown z-50">
+                  <div className="space-y-2 font-gothic text-base font-normal tracking-wide text-sociallyin-textDark">
                     {aboutDropdownItems.map((item, idx) => (
                       <Link
                         key={idx}
@@ -88,29 +88,29 @@ export default function Navbar() {
 
             {/* SERVICES Dropdown Trigger */}
             <div 
-              className="relative py-1.5"
+              className="relative py-1"
               onMouseEnter={() => setActiveDropdown('services')}
               onMouseLeave={() => setActiveDropdown(null)}
             >
               <Link href="/services" className="flex items-center gap-0.5 hover:text-sociallyin-darkBlue transition-colors">
                 <span>SERVICES</span>
                 {activeDropdown === 'services' ? (
-                  <ChevronUp className="w-3.5 h-3.5 text-sociallyin-blue stroke-[3]" />
+                  <ChevronUp className="w-3 h-3 text-sociallyin-blue stroke-[3]" />
                 ) : (
-                  <ChevronDown className="w-3.5 h-3.5 text-sociallyin-blue stroke-[3]" />
+                  <ChevronDown className="w-3 h-3 text-sociallyin-blue stroke-[3]" />
                 )}
               </Link>
 
               {/* SERVICES Dropdown Dialog Box */}
               {activeDropdown === 'services' && (
-                <div className="absolute top-full -left-4 w-80 p-5 nav-dropdown-box animate-dropdown z-50">
-                  <div className="space-y-2 font-gothic text-xl font-normal tracking-wide text-sociallyin-textDark">
+                <div className="absolute top-full -left-4 w-72 p-4 nav-dropdown-box animate-dropdown z-50">
+                  <div className="space-y-1.5 font-gothic text-base font-normal tracking-wide text-sociallyin-textDark">
                     {servicesDropdownItems.map((item, idx) => (
                       <Link
                         key={idx}
                         href={item.href}
                         onClick={() => setActiveDropdown(null)}
-                        className="block text-sociallyin-textDark hover:text-sociallyin-blue hover:translate-x-1.5 transition-all py-0.5 border-b border-blue-100/60 last:border-0"
+                        className="block text-sociallyin-textDark hover:text-sociallyin-blue hover:translate-x-1 transition-all py-0.5 border-b border-blue-100/60 last:border-0 text-xs"
                       >
                         {item.label}
                       </Link>
@@ -134,11 +134,11 @@ export default function Navbar() {
 
           </nav>
 
-          {/* FREE PROPOSAL Button */}
+          {/* Compact FREE PROPOSAL Button */}
           <div className="hidden lg:flex items-center pr-[20px]">
             <Link
               href="/#proposal-form"
-              className="btn-yellow text-lg px-5 py-1.5 rounded-lg"
+              className="btn-yellow text-sm px-4 py-1.5 rounded-lg"
             >
               <span>FREE PROPOSAL</span>
             </Link>
@@ -149,7 +149,7 @@ export default function Navbar() {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="lg:hidden p-2 text-sociallyin-blue pr-[20px]"
           >
-            {mobileMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
+            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
 
         </div>
@@ -157,11 +157,11 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white border-b border-gray-200 px-4 pt-4 pb-6 space-y-3 font-gothic text-2xl">
+        <div className="lg:hidden bg-white border-b border-gray-200 px-4 pt-3 pb-5 space-y-2.5 font-gothic text-xl">
           <Link href="/#about" onClick={() => setMobileMenuOpen(false)} className="block text-sociallyin-blue">ABOUT</Link>
           <Link href="/services" onClick={() => setMobileMenuOpen(false)} className="block text-sociallyin-blue">SERVICES</Link>
           
-          <div className="pl-3 border-l-2 border-sociallyin-blue space-y-2 text-lg font-gothic text-sociallyin-textDark">
+          <div className="pl-3 border-l-2 border-sociallyin-blue space-y-1.5 text-sm font-gothic text-sociallyin-textDark">
             {servicesDropdownItems.map((item, idx) => (
               <Link key={idx} href={item.href} onClick={() => setMobileMenuOpen(false)} className="block hover:text-sociallyin-blue">
                 • {item.label}
@@ -173,8 +173,8 @@ export default function Navbar() {
           <Link href="/#case-studies" onClick={() => setMobileMenuOpen(false)} className="block text-sociallyin-blue">WORK</Link>
           <Link href="/academy" onClick={() => setMobileMenuOpen(false)} className="block text-sociallyin-blue">ACADEMY</Link>
 
-          <div className="pt-3">
-            <Link href="/#proposal-form" onClick={() => setMobileMenuOpen(false)} className="btn-yellow text-center w-full justify-center text-xl">
+          <div className="pt-2">
+            <Link href="/#proposal-form" onClick={() => setMobileMenuOpen(false)} className="btn-yellow text-center w-full justify-center text-base">
               FREE PROPOSAL
             </Link>
           </div>
