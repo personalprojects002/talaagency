@@ -33,9 +33,9 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         <div className="flex items-center justify-between">
           
-          {/* Logo with full clear name Next Vision Creators as requested */}
-          <Link href="/" className="flex items-center gap-2.5 group">
-            <div className="w-9 h-9 rounded-lg bg-sociallyin-blue flex items-center justify-center font-gothic text-2xl text-white font-normal leading-none">
+          {/* Logo with NVC Icon + Next Vision Creators Name shifted with 20px padding as requested */}
+          <Link href="/" className="flex items-center gap-3 group pl-[20px]">
+            <div className="w-10 h-10 rounded-xl bg-sociallyin-blue flex items-center justify-center font-gothic text-2xl text-white font-normal leading-none shadow-sm group-hover:bg-sociallyin-darkBlue transition-colors shrink-0">
               NVC
             </div>
             <div className="flex flex-col">
@@ -49,7 +49,7 @@ export default function Navbar() {
           </Link>
 
           {/* Nav Links */}
-          <nav className="hidden lg:flex items-center gap-6 font-gothic text-2xl font-normal text-sociallyin-blue tracking-wider uppercase">
+          <nav className="hidden lg:flex items-center gap-6 font-gothic text-2xl font-normal text-sociallyin-blue tracking-wider uppercase pr-[20px]">
             
             {/* ABOUT Dropdown Trigger */}
             <div 
@@ -85,7 +85,7 @@ export default function Navbar() {
               )}
             </div>
 
-            {/* SERVICES Dropdown Trigger linking to /services */}
+            {/* SERVICES Dropdown Trigger */}
             <div 
               className="relative py-1.5"
               onMouseEnter={() => setActiveDropdown('services')}
@@ -130,7 +130,7 @@ export default function Navbar() {
           </nav>
 
           {/* FREE PROPOSAL Button */}
-          <div className="hidden lg:flex items-center">
+          <div className="hidden lg:flex items-center pr-[20px]">
             <Link
               href="/#proposal-form"
               className="btn-yellow text-lg px-5 py-1.5 rounded-lg"
@@ -142,7 +142,7 @@ export default function Navbar() {
           {/* Mobile Toggle */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 text-sociallyin-blue"
+            className="lg:hidden p-2 text-sociallyin-blue pr-[20px]"
           >
             {mobileMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
           </button>
