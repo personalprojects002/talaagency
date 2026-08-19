@@ -21,6 +21,7 @@ const servicesDropdownItems = [
 const aboutDropdownItems = [
   { label: 'ABOUT NEXT VISION CREATORS', href: '/#about' },
   { label: 'PAKISTAN AGENCY HQ', href: '/#studio' },
+  { label: 'NVC ACADEMY COURSES', href: '/academy' },
   { label: 'MEET THE TEAM', href: '/#team' },
 ];
 
@@ -33,7 +34,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         <div className="flex items-center justify-between">
           
-          {/* Logo with NVC Icon + Next Vision Creators Name shifted with 20px padding as requested */}
+          {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group pl-[20px]">
             <div className="w-10 h-10 rounded-xl bg-sociallyin-blue flex items-center justify-center font-gothic text-2xl text-white font-normal leading-none shadow-sm group-hover:bg-sociallyin-darkBlue transition-colors shrink-0">
               NVC
@@ -48,7 +49,7 @@ export default function Navbar() {
             </div>
           </Link>
 
-          {/* Nav Links */}
+          {/* Desktop Nav Links */}
           <nav className="hidden lg:flex items-center gap-6 font-gothic text-2xl font-normal text-sociallyin-blue tracking-wider uppercase pr-[20px]">
             
             {/* ABOUT Dropdown Trigger */}
@@ -127,6 +128,10 @@ export default function Navbar() {
               WORK
             </Link>
 
+            <Link href="/academy" className="hover:text-sociallyin-darkBlue transition-colors">
+              ACADEMY
+            </Link>
+
           </nav>
 
           {/* FREE PROPOSAL Button */}
@@ -166,6 +171,7 @@ export default function Navbar() {
 
           <Link href="/#studio" onClick={() => setMobileMenuOpen(false)} className="block text-sociallyin-blue">STUDIOS</Link>
           <Link href="/#case-studies" onClick={() => setMobileMenuOpen(false)} className="block text-sociallyin-blue">WORK</Link>
+          <Link href="/academy" onClick={() => setMobileMenuOpen(false)} className="block text-sociallyin-blue">ACADEMY</Link>
 
           <div className="pt-3">
             <Link href="/#proposal-form" onClick={() => setMobileMenuOpen(false)} className="btn-yellow text-center w-full justify-center text-xl">
