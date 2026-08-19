@@ -74,25 +74,25 @@ export default function TeamSection() {
         </div>
 
         {/* 8 Team Cards Grid - 1 col mobile, 2 sm, 3 md, 4 lg */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 text-left">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 text-left">
           {teamMembers.map((member, idx) => (
             <div 
               key={idx}
-              className="sociallyin-card p-4 sm:p-5 bg-white border-2 border-[#C2DBFE] hover:border-sociallyin-blue rounded-xl flex flex-col justify-between space-y-3 shadow-sm hover:shadow-lg transition-all"
+              className="sociallyin-card p-4 sm:p-5 bg-white border-2 border-[#C2DBFE] hover:border-sociallyin-blue rounded-xl flex flex-col justify-between space-y-4 shadow-sm hover:shadow-lg transition-all group"
             >
               <div className="space-y-3">
-                {/* Photo container centered & perfectly fitted */}
-                <div className="w-full aspect-[4/3] rounded-lg overflow-hidden bg-slate-100 border border-gray-200 flex items-center justify-center relative">
+                {/* Photo container portrait aspect ratio for perfect centered face fit */}
+                <div className="w-full h-56 rounded-lg overflow-hidden bg-slate-100 border border-gray-200 flex items-center justify-center relative">
                   {member.image ? (
                     <img 
                       src={member.image} 
                       alt={member.name} 
-                      className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-300"
+                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
                     />
                   ) : (
                     <div className="flex flex-col items-center justify-center space-y-2 text-slate-400 bg-slate-50 w-full h-full p-4 text-center">
-                      <div className="w-12 h-12 rounded-full bg-slate-200 flex items-center justify-center text-slate-500">
-                        <User className="w-6 h-6" />
+                      <div className="w-14 h-14 rounded-full bg-slate-200 flex items-center justify-center text-slate-500">
+                        <User className="w-7 h-7" />
                       </div>
                       <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500 font-sans">
                         NO PROFILE PICTURE
