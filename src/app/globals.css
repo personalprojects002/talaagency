@@ -17,14 +17,14 @@ body {
   scroll-behavior: smooth;
 }
 
-/* Exact Condensed Headline Font from Image */
+/* Exact Condensed Headline Font */
 h1, h2, h3, .font-heading, .font-gothic {
   font-family: var(--font-league-gothic);
   letter-spacing: 0.03em;
   text-transform: uppercase;
 }
 
-/* Hero Headline Text Styles matching Image */
+/* Hero Headline Text Styles */
 .hero-title-blue {
   color: #0066FF;
   font-family: var(--font-league-gothic);
@@ -45,7 +45,7 @@ h1, h2, h3, .font-heading, .font-gothic {
   display: inline-block;
 }
 
-/* Yellow Underline Stroke underneath SOCIAL MEDIA matching Image */
+/* Yellow Underline Stroke */
 .yellow-underline-stroke {
   position: relative;
   display: inline-block;
@@ -62,7 +62,7 @@ h1, h2, h3, .font-heading, .font-gothic {
   border-radius: 4px;
 }
 
-/* Navbar Menu Font from Image */
+/* Navbar Menu Font */
 .nav-link-gothic {
   font-family: var(--font-league-gothic);
   font-size: 1.35rem;
@@ -77,7 +77,7 @@ h1, h2, h3, .font-heading, .font-gothic {
   color: #0047BA;
 }
 
-/* Yellow Button matching Image */
+/* Yellow Button */
 .btn-yellow {
   background-color: #FFD000;
   color: #000000;
@@ -121,4 +121,20 @@ h1, h2, h3, .font-heading, .font-gothic {
   border-color: #0066FF;
   box-shadow: 0 12px 30px rgba(0, 102, 255, 0.12);
   transform: translateY(-4px);
+}
+
+/* Slow Continuous Smooth Carousel Marquee */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee-slow {
+  display: flex;
+  width: max-content;
+  animation: marquee 50s linear infinite;
+}
+
+.animate-marquee-slow:hover {
+  animation-play-state: paused;
 }
