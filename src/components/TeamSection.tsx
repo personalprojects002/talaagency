@@ -23,7 +23,7 @@ const teamMembers = [
     bio: 'Highly skilled videographer with 5 years of experience in wedding videography, product shoots, and commercial projects.'
   },
   {
-    name: 'Zaid Ali',
+    name: 'Abdullah Ali',
     role: 'Full Stack Developer',
     image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&auto=format&fit=crop&q=80',
     bio: 'Full Stack Developer with 2 years of experience in modern web technologies, building fast, responsive, and scalable web applications for agency clients.'
@@ -81,7 +81,7 @@ export default function TeamSection() {
               className="sociallyin-card p-4 sm:p-5 bg-white border-2 border-[#C2DBFE] hover:border-sociallyin-blue rounded-xl flex flex-col justify-between space-y-3 shadow-sm hover:shadow-lg transition-all"
             >
               <div className="space-y-3">
-                {/* Photo container centered */}
+                {/* Photo container centered & perfectly fitted */}
                 <div className="w-full aspect-[4/3] rounded-lg overflow-hidden bg-slate-100 border border-gray-200 flex items-center justify-center relative">
                   {member.image ? (
                     <img 
