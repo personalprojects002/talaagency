@@ -45,7 +45,7 @@ export default function Hero() {
               </div>
               <div>
                 <h4 className="font-gothic text-2xl font-normal text-sociallyin-yellow">100%</h4>
-                <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wider font-sans">Custom Content</p>
+                <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wider font-sans">Client Trust</p>
               </div>
               <div>
                 <h4 className="font-gothic text-2xl font-normal text-sociallyin-blue">PAKISTAN</h4>

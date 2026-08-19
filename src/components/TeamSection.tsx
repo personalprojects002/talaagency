@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { User } from 'lucide-react';
 
 const teamMembers = [
   {
@@ -24,7 +25,7 @@ const teamMembers = [
   {
     name: 'Zainab Ahmed',
     role: 'SEO Expert',
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&auto=format&fit=crop&q=80',
+    image: null,
     bio: 'Zainab Ahmed is a skilled SEO Expert with 3.5 years of professional experience in search engine optimization. She specializes in on-page SEO, off-page SEO, keyword research, technical SEO, and website performance optimization.'
   },
   {
@@ -36,13 +37,13 @@ const teamMembers = [
   {
     name: 'Fatima Ali',
     role: 'Content Creator',
-    image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&auto=format&fit=crop&q=80',
+    image: null,
     bio: 'Creative content creator specializing in engaging social media content and reels.'
   },
   {
     name: 'Labiba Noor',
     role: 'Graphic Designer',
-    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=500&auto=format&fit=crop&q=80',
+    image: null,
     bio: 'Labiba Noor is a creative and detail-oriented Graphic Designer with 3 years of professional experience. She specializes in designing visually appealing graphics for social media, branding, marketing materials, and digital platforms.'
   }
 ];
@@ -74,13 +75,24 @@ export default function TeamSection() {
               className="sociallyin-card p-5 bg-white border-2 border-[#C2DBFE] hover:border-sociallyin-blue rounded-xl flex flex-col justify-between space-y-4 shadow-sm hover:shadow-lg transition-all"
             >
               <div className="space-y-3">
-                {/* Photo */}
-                <div className="w-full aspect-[4/3] rounded-lg overflow-hidden bg-slate-100 border border-gray-200">
-                  <img 
-                    src={member.image} 
-                    alt={member.name} 
-                    className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300"
-                  />
+                {/* Photo / Clean No Profile Picture Placeholder */}
+                <div className="w-full aspect-[4/3] rounded-lg overflow-hidden bg-slate-100 border border-gray-200 flex flex-col items-center justify-center relative">
+                  {member.image ? (
+                    <img 
+                      src={member.image} 
+                      alt={member.name} 
+                      className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300"
+                    />
+                  ) : (
+                    <div className="flex flex-col items-center justify-center space-y-2 text-slate-400 bg-slate-50 w-full h-full p-4">
+                      <div className="w-16 h-16 rounded-full bg-slate-200 flex items-center justify-center text-slate-500">
+                        <User className="w-8 h-8" />
+                      </div>
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500 font-sans">
+                        NO PROFILE PICTURE
+                      </span>
+                    </div>
+                  )}
                 </div>
 
                 <div>
