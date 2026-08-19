@@ -23,7 +23,7 @@ const teamMembers = [
     bio: 'Highly skilled videographer with 5 years of experience in wedding videography, product shoots, and commercial projects.'
   },
   {
-    name: 'Abdullah Ali',
+    name: 'Zaid Ali',
     role: 'Full Stack Developer',
     image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&auto=format&fit=crop&q=80',
     bio: 'Full Stack Developer with 2 years of experience in modern web technologies, building fast, responsive, and scalable web applications for agency clients.'
@@ -56,11 +56,11 @@ const teamMembers = [
 
 export default function TeamSection() {
   return (
-    <section id="team" className="py-20 bg-[#F8FAFC]">
-      <div className="max-w-6xl mx-auto px-4 sm:px-8 text-center">
+    <section id="team" className="py-16 sm:py-20 bg-[#F8FAFC]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         
-        <div className="space-y-2 mb-12">
-          <span className="font-gothic text-lg font-normal text-sociallyin-blue uppercase tracking-widest bg-blue-50 px-3.5 py-0.5 rounded-full border border-blue-200 inline-block">
+        <div className="space-y-2 mb-10 sm:mb-12">
+          <span className="font-gothic text-base sm:text-lg font-normal text-sociallyin-blue uppercase tracking-widest bg-blue-50 px-3.5 py-0.5 rounded-full border border-blue-200 inline-block">
             OUR TEAM
           </span>
 
@@ -68,31 +68,31 @@ export default function TeamSection() {
             EXPERTS DEDICATED TO <span className="yellow-underline-stroke hero-title-yellow">YOUR SUCCESS</span>
           </h2>
 
-          <p className="text-sm sm:text-base text-slate-600 font-sans max-w-xl mx-auto font-medium">
+          <p className="text-xs sm:text-base text-slate-600 font-sans max-w-xl mx-auto font-medium">
             Meet the creative strategists, developers, video editors, videographers, and marketers behind Next Vision Creators (NVC).
           </p>
         </div>
 
-        {/* Team Cards Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
+        {/* 8 Team Cards Grid - 1 col mobile, 2 sm, 3 md, 4 lg */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 text-left">
           {teamMembers.map((member, idx) => (
             <div 
               key={idx}
-              className="sociallyin-card p-5 bg-white border-2 border-[#C2DBFE] hover:border-sociallyin-blue rounded-xl flex flex-col justify-between space-y-4 shadow-sm hover:shadow-lg transition-all"
+              className="sociallyin-card p-4 sm:p-5 bg-white border-2 border-[#C2DBFE] hover:border-sociallyin-blue rounded-xl flex flex-col justify-between space-y-3 shadow-sm hover:shadow-lg transition-all"
             >
               <div className="space-y-3">
-                {/* Photo / Clean No Profile Picture Placeholder */}
-                <div className="w-full aspect-[4/3] rounded-lg overflow-hidden bg-slate-100 border border-gray-200 flex flex-col items-center justify-center relative">
+                {/* Photo container centered */}
+                <div className="w-full aspect-[4/3] rounded-lg overflow-hidden bg-slate-100 border border-gray-200 flex items-center justify-center relative">
                   {member.image ? (
                     <img 
                       src={member.image} 
                       alt={member.name} 
-                      className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300"
+                      className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-300"
                     />
                   ) : (
-                    <div className="flex flex-col items-center justify-center space-y-2 text-slate-400 bg-slate-50 w-full h-full p-4">
-                      <div className="w-14 h-14 rounded-full bg-slate-200 flex items-center justify-center text-slate-500">
-                        <User className="w-7 h-7" />
+                    <div className="flex flex-col items-center justify-center space-y-2 text-slate-400 bg-slate-50 w-full h-full p-4 text-center">
+                      <div className="w-12 h-12 rounded-full bg-slate-200 flex items-center justify-center text-slate-500">
+                        <User className="w-6 h-6" />
                       </div>
                       <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500 font-sans">
                         NO PROFILE PICTURE
@@ -105,7 +105,7 @@ export default function TeamSection() {
                   <h3 className="font-gothic text-xl font-normal text-sociallyin-blue uppercase leading-tight">
                     {member.name}
                   </h3>
-                  <p className="text-[11px] font-bold text-slate-800 uppercase tracking-wider font-sans bg-blue-50 px-2.5 py-0.5 rounded border border-blue-100 inline-block mt-1">
+                  <p className="text-[10px] font-bold text-slate-800 uppercase tracking-wider font-sans bg-blue-50 px-2.5 py-0.5 rounded border border-blue-100 inline-block mt-1">
                     {member.role}
                   </p>
                 </div>
