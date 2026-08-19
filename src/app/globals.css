@@ -1,12 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=League+Gothic&family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800;900&family=Oswald:wght@500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --font-inter: 'Inter', sans-serif;
-  --font-league-gothic: 'League Gothic', 'Bebas Neue', sans-serif;
+  --font-inter: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-oswald: 'Oswald', 'Bebas Neue', sans-serif;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -15,30 +20,33 @@ body {
   font-family: var(--font-inter);
   overflow-x: hidden;
   scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
 }
 
-/* Exact Condensed Headline Font */
+/* Crisp Oswald Condensed Headline Font */
 h1, h2, h3, .font-heading, .font-gothic {
-  font-family: var(--font-league-gothic);
-  letter-spacing: 0.03em;
+  font-family: var(--font-oswald);
+  letter-spacing: 0.02em;
   text-transform: uppercase;
 }
 
 /* Hero Headline Text Styles */
 .hero-title-blue {
   color: #0066FF;
-  font-family: var(--font-league-gothic);
+  font-family: var(--font-oswald);
   font-size: clamp(3.2rem, 7vw, 6.2rem);
-  line-height: 0.95;
+  font-weight: 700;
+  line-height: 0.98;
   letter-spacing: 0.02em;
   text-transform: uppercase;
 }
 
 .hero-title-yellow {
   color: #FFD000;
-  font-family: var(--font-league-gothic);
+  font-family: var(--font-oswald);
   font-size: clamp(3.2rem, 7vw, 6.2rem);
-  line-height: 0.95;
+  font-weight: 700;
+  line-height: 0.98;
   letter-spacing: 0.02em;
   text-transform: uppercase;
   position: relative;
@@ -62,33 +70,27 @@ h1, h2, h3, .font-heading, .font-gothic {
   border-radius: 4px;
 }
 
-/* Navbar Menu Font */
-.nav-link-gothic {
-  font-family: var(--font-league-gothic);
-  font-size: 1.35rem;
-  font-weight: 400;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: #0066FF;
-  transition: color 0.2s ease;
+/* Yellow Highlighted Text Pill */
+.yellow-mark {
+  background-color: #FFD000;
+  color: #0F172A;
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+  display: inline;
 }
 
-.nav-link-gothic:hover {
-  color: #0047BA;
-}
-
-/* Yellow Button */
+/* Primary Yellow Button */
 .btn-yellow {
   background-color: #FFD000;
   color: #000000;
-  font-family: var(--font-league-gothic);
+  font-family: var(--font-oswald);
   font-size: 1.35rem;
-  font-weight: 400;
-  letter-spacing: 0.05em;
+  font-weight: 700;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   padding: 12px 28px;
   border-radius: 12px;
-  box-shadow: 0 4px 14px rgba(255, 208, 0, 0.35);
+  box-shadow: 0 4px 14px rgba(255, 208, 0, 0.4);
   transition: all 0.2s ease;
   display: inline-flex;
   align-items: center;
@@ -99,7 +101,7 @@ h1, h2, h3, .font-heading, .font-gothic {
 .btn-yellow:hover {
   background-color: #E6BC00;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 208, 0, 0.45);
+  box-shadow: 0 6px 20px rgba(255, 208, 0, 0.5);
 }
 
 /* Dropdown Dialog Box */
@@ -110,6 +112,7 @@ h1, h2, h3, .font-heading, .font-gothic {
   box-shadow: 0 20px 40px rgba(0, 102, 255, 0.18);
 }
 
+/* Sociallyin Light Blue Card */
 .sociallyin-card {
   background-color: #F4F8FE;
   border: 1.5px solid #C2DBFE;

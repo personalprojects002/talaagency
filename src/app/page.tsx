@@ -8,7 +8,6 @@ import BudgetPlanner from '@/components/BudgetPlanner';
 import StudioShowcase from '@/components/StudioShowcase';
 import WhyChooseSection from '@/components/WhyChooseSection';
 import CaseStudies from '@/components/CaseStudies';
-import AcademyShowcase from '@/components/AcademyShowcase';
 import Testimonials from '@/components/Testimonials';
 import ProposalForm from '@/components/ProposalForm';
 import Footer from '@/components/Footer';
@@ -25,7 +24,6 @@ export default function HomePage() {
       <StudioShowcase />
       <WhyChooseSection />
       <CaseStudies />
-      <AcademyShowcase />
       <Testimonials />
       <ProposalForm />
       <Footer />
