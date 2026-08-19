@@ -4,7 +4,7 @@ import React from 'react';
 
 export default function WaveAboutSection() {
   return (
-    <section id="about" className="relative bg-sociallyin-blue text-white py-24 overflow-hidden">
+    <section id="about" className="relative bg-sociallyin-blue text-white py-20 overflow-hidden">
       
       {/* Top Wave SVG Divider */}
       <div className="absolute top-0 left-0 right-0 overflow-hidden leading-none z-10">
@@ -15,27 +15,27 @@ export default function WaveAboutSection() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 text-center">
         
-        <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold uppercase tracking-tight mb-6">
+        <h2 className="font-gothic text-3xl sm:text-4xl lg:text-5xl font-normal uppercase tracking-tight mb-4">
           NVC: SOCIAL-FIRST AGENCY BASED IN PAKISTAN
         </h2>
 
-        <p className="text-lg sm:text-xl text-blue-100 font-medium leading-relaxed max-w-4xl mx-auto mb-12">
-          Next Vision Creators is a full-service social media marketing agency operating its own in-house production studio in Kamoke, Gujranwala, Pakistan. We serve clients worldwide — including <strong className="text-white">Immigration Consultants, Law Firms, Educational Academies, and E-Commerce Brands</strong> — with custom strategy, 4K studio video reels, paid ad management, and direct Notion CRM lead integration.
+        <p className="text-sm sm:text-base text-blue-100 font-sans font-medium leading-relaxed max-w-4xl mx-auto mb-10">
+          Next Vision Creators is a full-service social media marketing agency operating in Kamoke, Gujranwala, Pakistan. We serve clients worldwide — including <strong className="text-white">Immigration Consultants, Law Firms, Educational Academies, and E-Commerce Brands</strong> — with custom strategy, high-converting video reels, paid ad management, and instant client lead delivery.
         </p>
 
-        {/* 3 Stat Counters matching Image 1 */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-4xl mx-auto border-t border-white/20 pt-10">
+        {/* 3 Stat Counters */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto border-t border-white/20 pt-8">
           <div>
-            <h3 className="font-heading text-5xl font-extrabold text-sociallyin-yellow">500+</h3>
-            <p className="font-heading text-lg font-bold uppercase tracking-wider text-blue-100 mt-1">BRANDS & PROJECTS</p>
+            <h3 className="font-gothic text-4xl sm:text-5xl font-bold text-sociallyin-yellow">25+</h3>
+            <p className="font-gothic text-base font-normal uppercase tracking-wider text-blue-100 mt-1">BRANDS & PROJECTS</p>
           </div>
           <div>
-            <h3 className="font-heading text-5xl font-extrabold text-sociallyin-yellow">100%</h3>
-            <p className="font-heading text-lg font-bold uppercase tracking-wider text-blue-100 mt-1">IN-HOUSE STUDIO GEAR</p>
+            <h3 className="font-gothic text-4xl sm:text-5xl font-bold text-sociallyin-yellow">100%</h3>
+            <p className="font-gothic text-base font-normal uppercase tracking-wider text-blue-100 mt-1">CLIENT TRUST</p>
           </div>
           <div>
-            <h3 className="font-heading text-5xl font-extrabold text-sociallyin-yellow">98%</h3>
-            <p className="font-heading text-lg font-bold uppercase tracking-wider text-blue-100 mt-1">CLIENT RETENTION RATE</p>
+            <h3 className="font-gothic text-4xl sm:text-5xl font-bold text-sociallyin-yellow">98%</h3>
+            <p className="font-gothic text-base font-normal uppercase tracking-wider text-blue-100 mt-1">CLIENT SATISFACTION</p>
           </div>
         </div>
 

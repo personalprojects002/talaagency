@@ -23,16 +23,22 @@ const teamMembers = [
     bio: 'Highly skilled videographer with 5 years of experience in wedding videography, product shoots, and commercial projects.'
   },
   {
-    name: 'Zainab Ahmed',
-    role: 'SEO Expert',
-    image: null,
-    bio: 'Zainab Ahmed is a skilled SEO Expert with 3.5 years of professional experience in search engine optimization. She specializes in on-page SEO, off-page SEO, keyword research, technical SEO, and website performance optimization.'
+    name: 'Abdullah Ali',
+    role: 'Full Stack Developer',
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&auto=format&fit=crop&q=80',
+    bio: 'Full Stack Developer with 2 years of experience in modern web technologies, building fast, responsive, and scalable web applications for agency clients.'
   },
   {
     name: 'Asad Raza',
     role: 'Virtual Assistant',
     image: '/images/team-asad.jpg',
     bio: 'Dedicated E-commerce Virtual Assistant specializing in Amazon Seller Central and eBay Seller Hub. I manage product listings, SEO optimization, inventory tracking, and customer support to keep your store profitable and running smoothly.'
+  },
+  {
+    name: 'Zainab Ahmed',
+    role: 'SEO Expert',
+    image: null,
+    bio: 'Zainab Ahmed is a skilled SEO Expert with 3.5 years of professional experience in search engine optimization. She specializes in on-page SEO, off-page SEO, keyword research, technical SEO, and website performance optimization.'
   },
   {
     name: 'Fatima Ali',
@@ -63,12 +69,12 @@ export default function TeamSection() {
           </h2>
 
           <p className="text-sm sm:text-base text-slate-600 font-sans max-w-xl mx-auto font-medium">
-            Meet the creative strategists, video editors, videographers, and marketers behind Next Vision Creators (NVC).
+            Meet the creative strategists, developers, video editors, videographers, and marketers behind Next Vision Creators (NVC).
           </p>
         </div>
 
-        {/* 7 Team Cards Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
+        {/* Team Cards Grid */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
           {teamMembers.map((member, idx) => (
             <div 
               key={idx}
@@ -85,8 +91,8 @@ export default function TeamSection() {
                     />
                   ) : (
                     <div className="flex flex-col items-center justify-center space-y-2 text-slate-400 bg-slate-50 w-full h-full p-4">
-                      <div className="w-16 h-16 rounded-full bg-slate-200 flex items-center justify-center text-slate-500">
-                        <User className="w-8 h-8" />
+                      <div className="w-14 h-14 rounded-full bg-slate-200 flex items-center justify-center text-slate-500">
+                        <User className="w-7 h-7" />
                       </div>
                       <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500 font-sans">
                         NO PROFILE PICTURE
@@ -96,10 +102,10 @@ export default function TeamSection() {
                 </div>
 
                 <div>
-                  <h3 className="font-gothic text-2xl font-normal text-sociallyin-blue uppercase leading-tight">
+                  <h3 className="font-gothic text-xl font-normal text-sociallyin-blue uppercase leading-tight">
                     {member.name}
                   </h3>
-                  <p className="text-xs font-bold text-slate-800 uppercase tracking-wider font-sans bg-blue-50 px-2.5 py-0.5 rounded border border-blue-100 inline-block mt-1">
+                  <p className="text-[11px] font-bold text-slate-800 uppercase tracking-wider font-sans bg-blue-50 px-2.5 py-0.5 rounded border border-blue-100 inline-block mt-1">
                     {member.role}
                   </p>
                 </div>
