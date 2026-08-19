@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Users, BarChart3, MessageSquare, CheckCircle2, ArrowRight } from 'lucide-react';
+import { Users, Share2, Compass, CheckCircle2, ArrowRight } from 'lucide-react';
 
 const chooseCards = [
   {
@@ -15,23 +15,23 @@ const chooseCards = [
     ]
   },
   {
-    icon: BarChart3,
-    title: 'DATA-DRIVEN LEADS & ROI FOCUS',
-    subtitle: 'Real Business Inquiries, Not Vanity Metrics',
+    icon: Share2,
+    title: 'OMNICHANNEL SOCIAL MEDIA DOMINANCE',
+    subtitle: 'Multi-Platform Growth Across Facebook, IG & TikTok',
     points: [
-      'Focus on Cost-Per-Lead & Qualified Conversion Appointments',
-      'Transparent Monthly Return on Ad Spend (ROAS) Tracking',
-      'Continuous Campaign A/B Testing & Funnel Optimization'
+      'Strategic Content Activation Across Meta, TikTok & YouTube',
+      'High-CTR Graphic Thumbnails & Engaging Short Reels',
+      'Consistent Brand Voice & Active Audience Community Growth'
     ]
   },
   {
-    icon: MessageSquare,
-    title: 'NOTION CRM & INSTANT WHATSAPP AUTOMATION',
-    subtitle: 'Fast Response System to Turn Leads into Clients',
+    icon: Compass,
+    title: 'COMPREHENSIVE COMPETITOR & AUDIENCE AUDITS',
+    subtitle: 'In-Depth Market Intelligence for Maximum Growth',
     points: [
-      'Client Inquiries Saved Directly into Your Notion Database',
-      'Instant WhatsApp Alerts to Your Team for Fast Follow-ups',
-      'Zero Lost Lead Inquiries & Instant Conversion Setup'
+      'In-Depth Industry Vertical & Competitor Benchmarking',
+      'High-Intent Target Audience Profiling & Persona Mapping',
+      'Clear Monthly Growth Analytics & Strategic Recommendations'
     ]
   }
 ];
@@ -52,7 +52,7 @@ export default function WhyChooseSection() {
           </h2>
 
           <p className="text-sm sm:text-base text-slate-600 font-sans max-w-2xl mx-auto font-medium">
-            Proven campaigns. Dedicated creative team. Real business inquiries, not vanity metrics.
+            Proven campaigns. Specialized industry strategies. Consistent client growth.
           </p>
         </div>
 

@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { ArrowRight, Building2, DollarSign, Target, Check } from 'lucide-react';
+import { ArrowRight, Building2, DollarSign, Target } from 'lucide-react';
 
 const verticals = [
   'Immigration & Visa Consultancy',
@@ -21,7 +21,6 @@ const budgetTiers = [
     website: 'High-Converting Landing Page (Next.js/React)',
     studio: '1 Shoot Session (8 Video Reels)',
     social: 'Facebook & Instagram Handling + Targeted Lead Ads',
-    notion: 'Direct Notion CRM Logging & WhatsApp Alerts',
     blueprint: 'Built for emerging brands seeking immediate qualified leads and a polished online presence.'
   },
   {
@@ -32,7 +31,6 @@ const budgetTiers = [
     website: 'Full Multi-Page Responsive Custom Website (Next.js/React)',
     studio: '2 Shoot Sessions (16 Video Reels)',
     social: 'Full Multi-Channel Management (FB, IG, LinkedIn, TikTok) + Meta & TikTok Ads with A/B Testing',
-    notion: 'Direct Notion Database API Lead Logging & Instant WhatsApp Alerts',
     blueprint: 'Designed to deliver consistent inquiries, brand authority, and client conversions tailored for high growth.'
   },
   {
@@ -43,7 +41,6 @@ const budgetTiers = [
     website: 'Custom Web Application + High-ROAS Funnel Infrastructure',
     studio: 'Unlimited Monthly Video Reel Production & Creative Assets',
     social: '360° Omnichannel Execution + Retargeting Funnels + Campaign Manager',
-    notion: 'Enterprise Notion CRM Setup + Real-time Lead Automation & WhatsApp Bot',
     blueprint: 'Complete market dominance package for established firms demanding maximum ROI & brand supremacy.'
   }
 ];
@@ -109,7 +106,7 @@ export default function BudgetPlanner() {
               </div>
             </div>
 
-            {/* Step 2: Monthly Investment Budget (Clean, Compact Format) */}
+            {/* Step 2: Monthly Investment Budget */}
             <div className="sociallyin-card p-4 space-y-2 bg-[#F8FAFC] border border-blue-200">
               <label className="font-gothic text-lg text-sociallyin-blue uppercase flex items-center gap-1.5">
                 <DollarSign className="w-4 h-4 text-sociallyin-blue" />
@@ -205,11 +202,6 @@ export default function BudgetPlanner() {
                 <div className="p-3 rounded-lg bg-[#F8FAFC] border border-blue-100 space-y-0.5">
                   <span className="font-gothic text-base text-sociallyin-blue uppercase block">SOCIAL MEDIA HANDLING & PAID CAMPAIGNS</span>
                   <p className="font-semibold text-slate-900 text-xs">{selectedTier.social}</p>
-                </div>
-
-                <div className="p-3 rounded-lg bg-[#F8FAFC] border border-blue-100 space-y-0.5">
-                  <span className="font-gothic text-base text-sociallyin-blue uppercase block">NOTION DATABASE API & WHATSAPP LEAD CAPTURE</span>
-                  <p className="font-semibold text-slate-900 text-xs">{selectedTier.notion}</p>
                 </div>
 
               </div>
