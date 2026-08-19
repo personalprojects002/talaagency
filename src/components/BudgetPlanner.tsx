@@ -1,257 +1,245 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Calculator, CheckCircle2, Sparkles, ArrowRight, Video, Globe, Megaphone, Target, DollarSign, Layers } from 'lucide-react';
+import { Check, Sparkles, ArrowRight, Building2, DollarSign, Target, Video, Layers, Database, ShieldCheck } from 'lucide-react';
 
-const verticalsList = [
+const verticals = [
   'Immigration & Visa Consultancy',
   'Law Firm & Legal Practice',
   'Educational Institute / Academy',
   'E-Commerce Brand / Amazon Store',
   'Corporate & Business Consulting',
-  'Local Service Business'
+  'Local Service Business',
 ];
 
 const budgetTiers = [
   {
     id: 'starter',
-    label: '$300 - $500 / month',
-    pkr: 'PKR 85,000 - 140,000 / mo',
     name: 'Growth Kickstart Plan',
-    website: 'High-Converting Landing Page with WhatsApp integration',
-    videoStudio: '1 Studio Shoot Day (8 Edited Reels + Shorts)',
-    socialHandling: 'Full Facebook & Instagram Handling (12 Posts/mo)',
-    paidAds: 'Meta Ad Campaign Setup & Optimization (Client budget extra)',
-    leadsTracker: 'Basic Lead Tracker & WhatsApp Alerts'
+    pkr: 'PKR 85,000 - 140,000 / mo',
+    usd: '$300 - $500 / month',
+    popular: false,
+    website: 'High-Converting Landing Page (Next.js/React)',
+    studio: '1 Studio Shoot Day (8 Cinematic Reels)',
+    social: 'Facebook & Instagram Management + Basic Meta Ads',
+    notion: 'Basic Notion CRM & WhatsApp Direct Inquiries',
+    blueprint: 'Built for emerging brands seeking immediate qualified leads and a polished online presence.'
   },
   {
-    id: 'growth',
-    label: '$600 - $1,000 / month',
-    pkr: 'PKR 170,000 - 280,000 / mo',
+    id: 'scale',
     name: 'Scale & Authority Blueprint',
+    pkr: 'PKR 170,000 - 280,000 / mo',
+    usd: '$600 - $1,000 / month',
     popular: true,
     website: 'Full Multi-Page Responsive Custom Website (Next.js/React)',
-    videoStudio: '2 Studio Shoot Days (16 Cinematic Reels + YouTube Video)',
-    socialHandling: 'Full Multi-Channel Management (Facebook, IG, LinkedIn, TikTok)',
-    paidAds: 'Meta + TikTok Ad Campaigns with A/B Testing',
-    leadsTracker: 'Direct Notion Database API Lead Logging & Instant WhatsApp Alerts'
+    studio: '2 Studio Shoot Days (16 Cinematic Reels + YouTube Video)',
+    social: 'Full Multi-Channel Management (FB, IG, LinkedIn, TikTok) + Meta & TikTok Ads with A/B Testing',
+    notion: 'Direct Notion Database API Lead Logging & Instant WhatsApp Alerts',
+    blueprint: 'Designed to deliver consistent inquiries, brand authority, and client conversions tailored for high growth.'
   },
   {
     id: 'dominance',
-    label: '$1,200 - $2,500+ / month',
-    pkr: 'PKR 340,000 - 700,000+ / mo',
     name: 'Full Agency Dominance Suite',
-    website: 'Custom Web Application + E-Commerce / LMS Portal Integration',
-    videoStudio: 'Unlimited Studio Production & On-Location Shoot Crew',
-    socialHandling: 'Complete Social Media Domination (Daily Video Content)',
-    paidAds: 'High-Scale Meta, TikTok, YouTube & Google Ads Management',
-    leadsTracker: 'Dedicated Notion CRM System & Custom ROI Reporting'
+    pkr: 'PKR 340,000 - 700,000+ / mo',
+    usd: '$1,200 - $2,500+ / month',
+    popular: false,
+    website: 'Custom Web Application + CMS + High-ROAS Funnel Infrastructure',
+    studio: 'Unlimited Monthly Studio Access & Dedicated Camera Crew',
+    social: '360° Omnichannel Execution + Retargeting Funnels + Dedicated Campaign Manager',
+    notion: 'Custom Notion Enterprise CRM Setup + Real-time Lead Automation & WhatsApp Bot',
+    blueprint: 'Complete market dominance package for established firms demanding maximum ROI & brand supremacy.'
   }
 ];
 
+const goalsList = [
+  'Qualified Lead Generation',
+  'Brand Authority & Consultations',
+  'E-Commerce ROAS & Sales',
+  'Full Social Overhaul'
+];
+
 export default function BudgetPlanner() {
-  const [selectedVertical, setSelectedVertical] = useState(verticalsList[0]);
-  const [selectedBudget, setSelectedBudget] = useState(budgetTiers[1].id);
-  const [selectedGoal, setSelectedGoal] = useState('Qualified Lead Generation');
-
-  const currentTier = budgetTiers.find(b => b.id === selectedBudget) || budgetTiers[1];
-
-  const handleApplyStrategy = () => {
-    const proposalForm = document.getElementById('proposal-form');
-    if (proposalForm) {
-      proposalForm.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  const [selectedVertical, setSelectedVertical] = useState(verticals[0]);
+  const [selectedTier, setSelectedTier] = useState(budgetTiers[1]);
+  const [selectedGoal, setSelectedGoal] = useState(goalsList[0]);
 
   return (
-    <section id="budget-planner" className="py-24 bg-[#08080C] relative overflow-hidden">
-      
-      {/* Radial Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-blue-600/10 rounded-full blur-[140px] pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="budget-planner" className="py-20 bg-white">
+      <div className="max-w-6xl mx-auto px-6 lg:px-12 text-center">
         
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-semibold uppercase tracking-wider">
-            <Calculator className="w-3.5 h-3.5" />
-            Interactive Strategy Planner
-          </div>
+        {/* Header matching Sociallyin theme */}
+        <div className="space-y-3 mb-12">
+          <span className="font-gothic text-2xl font-normal text-sociallyin-blue uppercase tracking-widest bg-blue-50 px-4 py-1 rounded-full border border-blue-200 inline-block">
+            INTERACTIVE STRATEGY PLANNER
+          </span>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
-            Tell Us Your Budget. <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-indigo-400">
-              We Build Your Exact Growth Roadmap.
-            </span>
+          <h2 className="font-gothic text-4xl sm:text-5xl lg:text-6xl font-normal text-sociallyin-blue uppercase tracking-tight leading-none">
+            TELL US YOUR BUDGET. <span className="yellow-underline-stroke hero-title-yellow">WE BUILD YOUR EXACT GROWTH ROADMAP.</span>
           </h2>
 
-          <p className="text-gray-300 text-base sm:text-lg">
+          <p className="text-base sm:text-lg text-slate-600 font-sans max-w-2xl mx-auto font-medium">
             Select your industry vertical and monthly marketing budget below to generate your tailored agency execution plan instantly.
           </p>
         </div>
 
-        {/* Calculator Widget Wrapper */}
-        <div className="mt-14 glass-panel rounded-3xl p-6 sm:p-10 border border-white/10 shadow-2xl">
-          <div className="grid lg:grid-cols-12 gap-10">
+        <div className="grid lg:grid-cols-12 gap-8 text-left">
+          
+          {/* Left Selection Controls */}
+          <div className="lg:col-span-6 space-y-6">
             
-            {/* Left Inputs Column */}
-            <div className="lg:col-span-6 space-y-8">
-              
-              {/* Step 1: Industry Vertical */}
-              <div className="space-y-3">
-                <label className="text-xs font-bold uppercase tracking-wider text-gray-400 flex items-center gap-2">
-                  <Layers className="w-4 h-4 text-blue-400" />
-                  1. Select Your Business Industry:
-                </label>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                  {verticalsList.map((vert, idx) => (
-                    <button
-                      key={idx}
-                      onClick={() => setSelectedVertical(vert)}
-                      className={`px-3.5 py-2.5 rounded-xl text-xs font-semibold text-left transition-all border ${
-                        selectedVertical === vert
-                          ? 'bg-blue-600/20 border-blue-500 text-white shadow-md shadow-blue-500/10'
-                          : 'bg-white/5 border-white/5 text-gray-300 hover:bg-white/10 hover:text-white'
-                      }`}
-                    >
-                      {vert}
-                    </button>
-                  ))}
-                </div>
-              </div>
+            {/* Step 1: Industry */}
+            <div className="sociallyin-card p-6 space-y-3">
+              <label className="font-gothic text-2xl text-sociallyin-blue uppercase flex items-center gap-2">
+                <Building2 className="w-5 h-5 text-sociallyin-blue" />
+                <span>1. Select Your Business Industry:</span>
+              </label>
 
-              {/* Step 2: Budget Tiers */}
-              <div className="space-y-3">
-                <label className="text-xs font-bold uppercase tracking-wider text-gray-400 flex items-center gap-2">
-                  <DollarSign className="w-4 h-4 text-emerald-400" />
-                  2. Select Your Monthly Investment Budget:
-                </label>
-                <div className="space-y-3">
-                  {budgetTiers.map((tier) => (
-                    <div
-                      key={tier.id}
-                      onClick={() => setSelectedBudget(tier.id)}
-                      className={`p-4 rounded-2xl cursor-pointer transition-all border relative ${
-                        selectedBudget === tier.id
-                          ? 'bg-gradient-to-r from-blue-900/40 via-indigo-900/30 to-cyan-900/30 border-blue-500 shadow-xl shadow-blue-500/15'
-                          : 'bg-white/5 border-white/10 hover:border-white/20'
-                      }`}
-                    >
-                      {tier.popular && (
-                        <span className="absolute -top-3 right-4 px-2.5 py-0.5 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-[10px] font-bold text-white uppercase tracking-wider shadow-md">
-                          Most Popular
-                        </span>
-                      )}
-                      <div className="flex items-center justify-between">
-                        <div>
-                          <h4 className="font-bold text-white text-base">{tier.name}</h4>
-                          <p className="text-xs text-gray-400">{tier.pkr}</p>
-                        </div>
-                        <span className="text-sm font-extrabold text-cyan-300">{tier.label}</span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+              <div className="grid sm:grid-cols-2 gap-2.5">
+                {verticals.map((vert, idx) => (
+                  <button
+                    key={idx}
+                    type="button"
+                    onClick={() => setSelectedVertical(vert)}
+                    className={`p-3 rounded-xl text-left text-xs font-semibold font-sans transition-all border ${
+                      selectedVertical === vert
+                        ? 'bg-sociallyin-blue text-white border-sociallyin-blue shadow-md'
+                        : 'bg-white text-slate-700 border-gray-200 hover:border-sociallyin-blue'
+                    }`}
+                  >
+                    {vert}
+                  </button>
+                ))}
               </div>
-
-              {/* Step 3: Main Goal */}
-              <div className="space-y-3">
-                <label className="text-xs font-bold uppercase tracking-wider text-gray-400 flex items-center gap-2">
-                  <Target className="w-4 h-4 text-purple-400" />
-                  3. Primary Business Goal:
-                </label>
-                <div className="grid grid-cols-2 gap-2.5">
-                  {['Qualified Lead Generation', 'Brand Authority & Consultations', 'E-Commerce ROAS & Sales', 'Full Social Overhaul'].map((goal, idx) => (
-                    <button
-                      key={idx}
-                      onClick={() => setSelectedGoal(goal)}
-                      className={`px-3 py-2.5 rounded-xl text-xs font-semibold text-center transition-all border ${
-                        selectedGoal === goal
-                          ? 'bg-purple-600/20 border-purple-500 text-white'
-                          : 'bg-white/5 border-white/5 text-gray-300 hover:bg-white/10'
-                      }`}
-                    >
-                      {goal}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
             </div>
 
-            {/* Right Generated Strategy Breakdown Column */}
-            <div className="lg:col-span-6 bg-[#0D0E18] rounded-2xl p-6 sm:p-8 border border-white/10 space-y-6 flex flex-col justify-between">
-              
-              <div className="space-y-6">
-                
-                <div className="flex items-center justify-between border-b border-white/10 pb-4">
-                  <div>
-                    <span className="text-[11px] font-bold text-blue-400 uppercase tracking-widest">Tailored Growth Plan</span>
-                    <h3 className="text-xl font-bold text-white">{currentTier.name}</h3>
-                  </div>
-                  <div className="text-right">
-                    <span className="text-xs text-gray-400">Target Industry:</span>
-                    <p className="text-xs font-bold text-cyan-300 truncate max-w-[160px]">{selectedVertical}</p>
-                  </div>
-                </div>
+            {/* Step 2: Budget Tier */}
+            <div className="sociallyin-card p-6 space-y-3">
+              <label className="font-gothic text-2xl text-sociallyin-blue uppercase flex items-center gap-2">
+                <DollarSign className="w-5 h-5 text-sociallyin-blue" />
+                <span>2. Select Your Monthly Investment Budget:</span>
+              </label>
 
-                {/* Plan Components List */}
-                <div className="space-y-4 text-sm">
-                  
-                  <div className="flex items-start gap-3">
-                    <Globe className="w-5 h-5 text-blue-400 shrink-0 mt-0.5" />
+              <div className="space-y-3">
+                {budgetTiers.map((tier) => (
+                  <button
+                    key={tier.id}
+                    type="button"
+                    onClick={() => setSelectedTier(tier)}
+                    className={`w-full p-4 rounded-xl text-left transition-all border relative flex items-center justify-between ${
+                      selectedTier.id === tier.id
+                        ? 'bg-blue-50/80 border-sociallyin-blue shadow-md'
+                        : 'bg-white border-gray-200 hover:border-sociallyin-blue'
+                    }`}
+                  >
                     <div>
-                      <h4 className="font-semibold text-white">Website & Landing Page</h4>
-                      <p className="text-xs text-gray-300">{currentTier.website}</p>
+                      <div className="flex items-center gap-2">
+                        <span className="font-gothic text-xl font-normal text-sociallyin-blue uppercase">{tier.name}</span>
+                        {tier.popular && (
+                          <span className="text-[10px] font-extrabold uppercase bg-[#FFD000] text-black px-2 py-0.5 rounded font-sans">
+                            MOST POPULAR
+                          </span>
+                        )}
+                      </div>
+                      <p className="text-xs text-slate-500 font-sans font-semibold">{tier.pkr}</p>
                     </div>
-                  </div>
 
-                  <div className="flex items-start gap-3">
-                    <Video className="w-5 h-5 text-purple-400 shrink-0 mt-0.5" />
-                    <div>
-                      <h4 className="font-semibold text-white">In-House Studio Video Production</h4>
-                      <p className="text-xs text-gray-300">{currentTier.videoStudio}</p>
+                    <div className="text-right">
+                      <span className="font-gothic text-xl text-sociallyin-blue">{tier.usd}</span>
                     </div>
-                  </div>
-
-                  <div className="flex items-start gap-3">
-                    <Megaphone className="w-5 h-5 text-cyan-400 shrink-0 mt-0.5" />
-                    <div>
-                      <h4 className="font-semibold text-white">Social Media Handling & Paid Campaigns</h4>
-                      <p className="text-xs text-gray-300">{currentTier.socialHandling} + {currentTier.paidAds}</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
-                    <div>
-                      <h4 className="font-semibold text-white">Notion Database API & WhatsApp Lead Capture</h4>
-                      <p className="text-xs text-gray-300">{currentTier.leadsTracker}</p>
-                    </div>
-                  </div>
-
-                </div>
-
-                <div className="p-4 rounded-xl bg-blue-500/10 border border-blue-500/20 text-xs text-gray-300 space-y-1">
-                  <span className="font-bold text-blue-400">Expected Result Blueprint:</span>
-                  <p>Designed to deliver consistent inquiries, brand authority, and client conversions tailored for {selectedVertical}.</p>
-                </div>
-
+                  </button>
+                ))}
               </div>
+            </div>
 
-              {/* Action Button */}
-              <button
-                onClick={handleApplyStrategy}
-                className="w-full flex items-center justify-center gap-3 py-4 rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500 text-white font-bold text-base shadow-xl shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-[1.01] active:scale-[0.99] transition-all mt-4"
-              >
-                <Sparkles className="w-5 h-5" />
-                <span>Lock In This Plan & Submit Proposal</span>
-                <ArrowRight className="w-5 h-5" />
-              </button>
+            {/* Step 3: Primary Goal */}
+            <div className="sociallyin-card p-6 space-y-3">
+              <label className="font-gothic text-2xl text-sociallyin-blue uppercase flex items-center gap-2">
+                <Target className="w-5 h-5 text-sociallyin-blue" />
+                <span>3. Primary Business Goal:</span>
+              </label>
 
+              <div className="grid sm:grid-cols-2 gap-2.5">
+                {goalsList.map((g, idx) => (
+                  <button
+                    key={idx}
+                    type="button"
+                    onClick={() => setSelectedGoal(g)}
+                    className={`p-3 rounded-xl text-left text-xs font-semibold font-sans transition-all border ${
+                      selectedGoal === g
+                        ? 'bg-sociallyin-blue text-white border-sociallyin-blue shadow-md'
+                        : 'bg-white text-slate-700 border-gray-200 hover:border-sociallyin-blue'
+                    }`}
+                  >
+                    {g}
+                  </button>
+                ))}
+              </div>
             </div>
 
           </div>
+
+          {/* Right Strategy Roadmap Result Box matching User Content */}
+          <div className="lg:col-span-6">
+            <div className="sociallyin-card p-8 bg-white border-2 border-sociallyin-blue shadow-2xl space-y-6 sticky top-24">
+              
+              <div className="border-b border-gray-200 pb-4 space-y-1">
+                <span className="text-[11px] font-extrabold text-sociallyin-blue uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-200 inline-block font-sans">
+                  TAILORED GROWTH PLAN
+                </span>
+                <h3 className="font-gothic text-3xl font-normal text-sociallyin-blue uppercase leading-none pt-1">
+                  {selectedTier.name}
+                </h3>
+                <p className="text-xs font-bold text-slate-500 font-sans uppercase">
+                  Target Industry: <strong className="text-sociallyin-blue">{selectedVertical}</strong>
+                </p>
+              </div>
+
+              <div className="space-y-4 text-xs font-sans font-medium text-slate-700">
+                
+                <div className="p-3.5 rounded-xl bg-[#F4F8FE] border border-[#C2DBFE] space-y-1">
+                  <span className="font-gothic text-lg text-sociallyin-blue uppercase block">WEBSITE & LANDING PAGE</span>
+                  <p className="font-semibold text-slate-800">{selectedTier.website}</p>
+                </div>
+
+                <div className="p-3.5 rounded-xl bg-[#F4F8FE] border border-[#C2DBFE] space-y-1">
+                  <span className="font-gothic text-lg text-sociallyin-blue uppercase block">IN-HOUSE STUDIO VIDEO PRODUCTION</span>
+                  <p className="font-semibold text-slate-800">{selectedTier.studio}</p>
+                </div>
+
+                <div className="p-3.5 rounded-xl bg-[#F4F8FE] border border-[#C2DBFE] space-y-1">
+                  <span className="font-gothic text-lg text-sociallyin-blue uppercase block">SOCIAL MEDIA HANDLING & PAID CAMPAIGNS</span>
+                  <p className="font-semibold text-slate-800">{selectedTier.social}</p>
+                </div>
+
+                <div className="p-3.5 rounded-xl bg-[#F4F8FE] border border-[#C2DBFE] space-y-1">
+                  <span className="font-gothic text-lg text-sociallyin-blue uppercase block">NOTION DATABASE API & WHATSAPP LEAD CAPTURE</span>
+                  <p className="font-semibold text-slate-800">{selectedTier.notion}</p>
+                </div>
+
+              </div>
+
+              {/* Expected Result Blueprint */}
+              <div className="p-4 rounded-xl bg-amber-50 border border-amber-200 text-amber-900 space-y-1">
+                <span className="font-gothic text-lg text-amber-800 uppercase block">EXPECTED RESULT BLUEPRINT</span>
+                <p className="text-xs font-medium font-sans leading-relaxed">
+                  {selectedTier.blueprint}
+                </p>
+              </div>
+
+              {/* Action Button */}
+              <div className="pt-2">
+                <a 
+                  href="#proposal-form"
+                  className="btn-yellow text-xl w-full justify-center py-4 rounded-xl shadow-xl"
+                >
+                  <span>LOCK IN THIS PLAN & SUBMIT PROPOSAL</span>
+                  <ArrowRight className="w-5 h-5 stroke-[3]" />
+                </a>
+              </div>
+
+            </div>
+          </div>
+
         </div>
 
       </div>

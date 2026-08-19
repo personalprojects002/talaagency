@@ -28,32 +28,32 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 py-3 transition-all">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 py-2.5 transition-all">
+      <div className="max-w-6xl mx-auto px-4 sm:px-8">
         <div className="flex items-center justify-between">
           
-          {/* NVC Logo in League Gothic matching image */}
-          <a href="#" className="flex items-center gap-2 group">
+          {/* NVC Logo */}
+          <a href="#" className="flex items-center gap-1.5 group">
             <span className="font-gothic text-4xl font-normal text-sociallyin-blue tracking-wider group-hover:text-sociallyin-darkBlue transition-colors leading-none">
               NVC
             </span>
           </a>
 
-          {/* Nav Links in League Gothic matching image */}
-          <nav className="hidden lg:flex items-center gap-9 font-gothic text-2xl font-normal text-sociallyin-blue tracking-wider uppercase">
+          {/* Nav Links closer together as requested (gap-5) */}
+          <nav className="hidden lg:flex items-center gap-5 font-gothic text-2xl font-normal text-sociallyin-blue tracking-wider uppercase">
             
             {/* ABOUT Dropdown Trigger */}
             <div 
-              className="relative py-2"
+              className="relative py-1.5"
               onMouseEnter={() => setActiveDropdown('about')}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <button className="flex items-center gap-1 hover:text-sociallyin-darkBlue transition-colors">
+              <button className="flex items-center gap-0.5 hover:text-sociallyin-darkBlue transition-colors">
                 <span>ABOUT</span>
                 {activeDropdown === 'about' ? (
-                  <ChevronUp className="w-4 h-4 text-sociallyin-blue stroke-[3]" />
+                  <ChevronUp className="w-3.5 h-3.5 text-sociallyin-blue stroke-[3]" />
                 ) : (
-                  <ChevronDown className="w-4 h-4 text-sociallyin-blue stroke-[3]" />
+                  <ChevronDown className="w-3.5 h-3.5 text-sociallyin-blue stroke-[3]" />
                 )}
               </button>
 
@@ -78,23 +78,23 @@ export default function Navbar() {
 
             {/* SERVICES Dropdown Trigger */}
             <div 
-              className="relative py-2"
+              className="relative py-1.5"
               onMouseEnter={() => setActiveDropdown('services')}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <button className="flex items-center gap-1 hover:text-sociallyin-darkBlue transition-colors">
+              <button className="flex items-center gap-0.5 hover:text-sociallyin-darkBlue transition-colors">
                 <span>SERVICES</span>
                 {activeDropdown === 'services' ? (
-                  <ChevronUp className="w-4 h-4 text-sociallyin-blue stroke-[3]" />
+                  <ChevronUp className="w-3.5 h-3.5 text-sociallyin-blue stroke-[3]" />
                 ) : (
-                  <ChevronDown className="w-4 h-4 text-sociallyin-blue stroke-[3]" />
+                  <ChevronDown className="w-3.5 h-3.5 text-sociallyin-blue stroke-[3]" />
                 )}
               </button>
 
               {/* SERVICES Dropdown Dialog Box */}
               {activeDropdown === 'services' && (
-                <div className="absolute top-full -left-4 w-80 p-6 nav-dropdown-box animate-dropdown z-50">
-                  <div className="space-y-2.5 font-gothic text-xl font-normal tracking-wide text-sociallyin-textDark">
+                <div className="absolute top-full -left-4 w-80 p-5 nav-dropdown-box animate-dropdown z-50">
+                  <div className="space-y-2 font-gothic text-xl font-normal tracking-wide text-sociallyin-textDark">
                     {servicesDropdownItems.map((item, idx) => (
                       <a
                         key={idx}
@@ -120,11 +120,11 @@ export default function Navbar() {
 
           </nav>
 
-          {/* FREE PROPOSAL Yellow Button in League Gothic matching image */}
+          {/* FREE PROPOSAL Button */}
           <div className="hidden lg:flex items-center">
             <a
               href="#proposal-form"
-              className="btn-yellow text-lg px-6 py-2 rounded-xl"
+              className="btn-yellow text-lg px-5 py-1.5 rounded-lg"
             >
               <span>FREE PROPOSAL</span>
             </a>
@@ -141,7 +141,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Drawer */}
       {mobileMenuOpen && (
         <div className="lg:hidden bg-white border-b border-gray-200 px-4 pt-4 pb-6 space-y-3 font-gothic text-2xl">
           <a href="#about" onClick={() => setMobileMenuOpen(false)} className="block text-sociallyin-blue">ABOUT</a>
