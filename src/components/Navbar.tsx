@@ -70,7 +70,6 @@ const navbar6Services = [
 const aboutDropdownItems = [
   { label: 'ABOUT NEXT VISION CREATORS', href: '/#about' },
   { label: 'PAKISTAN AGENCY HQ', href: '/#studio' },
-  { label: 'NVC ACADEMY COURSES', href: '/academy' },
   { label: 'MEET THE TEAM', href: '/#team' },
 ];
 
