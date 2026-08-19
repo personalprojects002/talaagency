@@ -7,7 +7,7 @@ const teamMembers = [
   {
     name: 'Talal Ahmad',
     role: 'Founder & Digital Marketer',
-    image: '/images/team-talal.png',
+    image: '/images/team-ahmad.jpg',
     bio: 'With over 5 years of experience in digital marketing and content creation, Talal leads the team with innovative ideas and strategic approach.'
   },
   {
@@ -19,7 +19,7 @@ const teamMembers = [
   {
     name: 'Mohammed Ahmad',
     role: 'Videographer',
-    image: '/images/team-ahmad.jpg',
+    image: '/images/team-talal.png',
     bio: 'Highly skilled videographer with 5 years of experience in wedding videography, product shoots, and commercial projects.'
   },
   {
