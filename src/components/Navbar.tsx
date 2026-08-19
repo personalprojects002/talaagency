@@ -5,17 +5,12 @@ import Link from 'next/link';
 import { ChevronDown, ChevronUp, Menu, X } from 'lucide-react';
 
 const servicesDropdownItems = [
-  { label: 'SOCIAL MEDIA STRATEGY', href: '/services#strategy' },
-  { label: 'SOCIAL MEDIA MANAGEMENT', href: '/services#management' },
-  { label: 'COMMUNITY MANAGEMENT & LISTENING', href: '/services#community' },
+  { label: 'SOCIAL MEDIA STRATEGY & CONSULTING', href: '/services#strategy' },
   { label: 'SOCIAL CONTENT PRODUCTION', href: '/services#content' },
+  { label: 'SOCIAL MEDIA MANAGEMENT & COMMUNITY', href: '/services#management' },
   { label: 'PAID SOCIAL ADVERTISING', href: '/services#paid-ads' },
-  { label: 'INFLUENCER MARKETING', href: '/services#influencer' },
-  { label: 'SOCIAL SELLING', href: '/services#social-selling' },
-  { label: 'SOCIAL MEDIA CONSULTING', href: '/services#consulting' },
-  { label: 'OUTBOUND ENGAGEMENT', href: '/services#outbound' },
-  { label: 'ROI DATA ANALYSIS & REPORTING', href: '/services#data-analysis' },
-  { label: 'REDDIT MARKETING AGENCY', href: '/services#reddit' },
+  { label: 'INFLUENCER & YOUTUBE AUTOMATION', href: '/services#automation' },
+  { label: 'WEBSITE & NOTION CRM INTEGRATION', href: '/services#integration' },
 ];
 
 const aboutDropdownItems = [
@@ -49,7 +44,7 @@ export default function Navbar() {
             </div>
           </Link>
 
-          {/* Compact Desktop Nav Links */}
+          {/* Desktop Nav Links */}
           <nav className="hidden lg:flex items-center gap-5 font-gothic text-lg font-normal text-sociallyin-blue tracking-wider uppercase pr-[20px]">
             
             {/* ABOUT Dropdown Trigger */}
@@ -86,7 +81,7 @@ export default function Navbar() {
               )}
             </div>
 
-            {/* SERVICES Dropdown Trigger */}
+            {/* SERVICES Dropdown Trigger - ONLY 6 Core Services as requested */}
             <div 
               className="relative py-1"
               onMouseEnter={() => setActiveDropdown('services')}
@@ -101,16 +96,16 @@ export default function Navbar() {
                 )}
               </Link>
 
-              {/* SERVICES Dropdown Dialog Box */}
+              {/* SERVICES Dropdown Dialog Box (6 Core Services Only) */}
               {activeDropdown === 'services' && (
-                <div className="absolute top-full -left-4 w-72 p-4 nav-dropdown-box animate-dropdown z-50">
-                  <div className="space-y-1.5 font-gothic text-base font-normal tracking-wide text-sociallyin-textDark">
+                <div className="absolute top-full -left-4 w-80 p-4 nav-dropdown-box animate-dropdown z-50">
+                  <div className="space-y-2 font-gothic text-base font-normal tracking-wide text-sociallyin-textDark">
                     {servicesDropdownItems.map((item, idx) => (
                       <Link
                         key={idx}
                         href={item.href}
                         onClick={() => setActiveDropdown(null)}
-                        className="block text-sociallyin-textDark hover:text-sociallyin-blue hover:translate-x-1 transition-all py-0.5 border-b border-blue-100/60 last:border-0 text-xs"
+                        className="block text-sociallyin-textDark hover:text-sociallyin-blue hover:translate-x-1 transition-all py-1 border-b border-blue-100/60 last:border-0 text-xs font-bold font-sans"
                       >
                         {item.label}
                       </Link>
@@ -134,7 +129,7 @@ export default function Navbar() {
 
           </nav>
 
-          {/* Compact FREE PROPOSAL Button */}
+          {/* FREE PROPOSAL Button */}
           <div className="hidden lg:flex items-center pr-[20px]">
             <Link
               href="/#proposal-form"
@@ -161,7 +156,7 @@ export default function Navbar() {
           <Link href="/#about" onClick={() => setMobileMenuOpen(false)} className="block text-sociallyin-blue">ABOUT</Link>
           <Link href="/services" onClick={() => setMobileMenuOpen(false)} className="block text-sociallyin-blue">SERVICES</Link>
           
-          <div className="pl-3 border-l-2 border-sociallyin-blue space-y-1.5 text-sm font-gothic text-sociallyin-textDark">
+          <div className="pl-3 border-l-2 border-sociallyin-blue space-y-1.5 text-xs font-bold font-sans text-sociallyin-textDark">
             {servicesDropdownItems.map((item, idx) => (
               <Link key={idx} href={item.href} onClick={() => setMobileMenuOpen(false)} className="block hover:text-sociallyin-blue">
                 • {item.label}
