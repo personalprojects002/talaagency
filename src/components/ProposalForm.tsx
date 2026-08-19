@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Send, CheckCircle2, AlertCircle, MessageSquare, Sparkles, Building, Phone, Mail, MapPin, Clock } from 'lucide-react';
+import { Send, CheckCircle2, AlertCircle, Phone, Mail, MapPin, Clock } from 'lucide-react';
 
 export default function ProposalForm() {
   const [formData, setFormData] = useState({
@@ -31,7 +31,7 @@ export default function ProposalForm() {
     setErrorMsg('');
 
     try {
-      // 1. Submit to Notion API endpoint
+      // Submit to Notion API endpoint
       const res = await fetch('/api/proposals', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -47,8 +47,8 @@ export default function ProposalForm() {
       setSubmitted(true);
       setLoading(false);
 
-      // 2. Trigger instant WhatsApp message to agency number (0331-6996815)
-      const waMessage = `*New Agency Strategy Request (NVC Website)*%0A%0A` +
+      // WhatsApp dispatch to 0331-6996815
+      const waMessage = `*New Strategy Proposal Request (NVC Website)*%0A%0A` +
         `*Name:* ${formData.name}%0A` +
         `*Phone:* ${formData.phone}%0A` +
         `*Email:* ${formData.email || 'N/A'}%0A` +
@@ -59,7 +59,6 @@ export default function ProposalForm() {
 
       window.open(`https://wa.me/923316996815?text=${waMessage}`, '_blank');
 
-      // Reset form
       setFormData({
         name: '',
         email: '',
@@ -78,119 +77,100 @@ export default function ProposalForm() {
   };
 
   return (
-    <section id="proposal-form" className="py-24 bg-[#08080C] relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="proposal-form" className="py-24 bg-[#F8FAFC]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="grid lg:grid-cols-12 gap-12">
           
-          {/* Left Agency Address & Contact Details */}
-          <div className="lg:col-span-5 space-y-8">
+          {/* Left Contact Info */}
+          <div className="lg:col-span-5 space-y-8 text-left">
             <div className="space-y-4">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold uppercase tracking-wider">
-                <Sparkles className="w-3.5 h-3.5" />
-                Let's Discuss Growth
-              </div>
-
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-                Request Your Custom Strategy & Proposal.
+              <h2 className="font-heading text-4xl sm:text-5xl font-bold text-sociallyin-blue uppercase tracking-tight">
+                REQUEST YOUR CUSTOM STRATEGY & PROPOSAL
               </h2>
 
-              <p className="text-gray-300 text-base leading-relaxed">
-                Fill out the form to send your project details directly into our <strong className="text-white">Notion Lead Database</strong> and trigger an instant WhatsApp consultation call.
+              <p className="text-sociallyin-textMuted text-base font-medium leading-relaxed">
+                Send your business requirements directly to our senior strategy team. All proposals are saved directly into our <strong className="text-sociallyin-textDark">Notion CRM Database</strong> and trigger instant WhatsApp consultation follow-ups.
               </p>
             </div>
 
-            {/* Direct Contact Cards */}
-            <div className="space-y-4 text-sm">
-              
-              <div className="glass-panel p-5 rounded-2xl border border-white/10 flex items-start gap-4">
-                <div className="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
+            <div className="space-y-4 text-sm font-semibold">
+              <div className="sociallyin-card p-5 flex items-start gap-4">
+                <div className="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 font-bold">
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-white">Direct Phone & WhatsApp</h4>
-                  <a href="https://wa.me/923316996815" target="_blank" rel="noopener noreferrer" className="text-emerald-400 font-semibold hover:underline">
+                  <h4 className="font-heading text-lg font-bold text-sociallyin-blue uppercase">PHONE & WHATSAPP</h4>
+                  <a href="https://wa.me/923316996815" target="_blank" rel="noopener noreferrer" className="text-emerald-700 hover:underline">
                     0331-6996815 (+92 331 6996815)
                   </a>
                 </div>
               </div>
 
-              <div className="glass-panel p-5 rounded-2xl border border-white/10 flex items-start gap-4">
-                <div className="w-10 h-10 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center shrink-0">
+              <div className="sociallyin-card p-5 flex items-start gap-4">
+                <div className="w-10 h-10 rounded-xl bg-blue-100 text-sociallyin-blue flex items-center justify-center shrink-0 font-bold">
                   <Mail className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-white">Official Agency Email</h4>
-                  <a href="mailto:nextvisioncreators@gmail.com" className="text-blue-400 font-semibold hover:underline">
+                  <h4 className="font-heading text-lg font-bold text-sociallyin-blue uppercase">AGENCY EMAIL</h4>
+                  <a href="mailto:nextvisioncreators@gmail.com" className="text-sociallyin-blue hover:underline">
                     nextvisioncreators@gmail.com
                   </a>
                 </div>
               </div>
 
-              <div className="glass-panel p-5 rounded-2xl border border-white/10 flex items-start gap-4">
-                <div className="w-10 h-10 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center shrink-0">
+              <div className="sociallyin-card p-5 flex items-start gap-4">
+                <div className="w-10 h-10 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center shrink-0 font-bold">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-white">Agency Studio Address</h4>
-                  <p className="text-gray-300">Main GT Road, near Taxi Stand, Kamoke, District Gujranwala, Punjab, Pakistan</p>
+                  <h4 className="font-heading text-lg font-bold text-sociallyin-blue uppercase">PAKISTAN STUDIO ADDRESS</h4>
+                  <p className="text-gray-700">Main GT Road, near Taxi Stand, Kamoke, District Gujranwala, Punjab, Pakistan</p>
                 </div>
               </div>
-
-              <div className="glass-panel p-5 rounded-2xl border border-white/10 flex items-start gap-4">
-                <div className="w-10 h-10 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center shrink-0">
-                  <Clock className="w-5 h-5" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-white">Business Hours</h4>
-                  <p className="text-gray-300">Mon - Fri: 9:00 AM - 6:00 PM | Sat: 10:00 AM - 4:00 PM</p>
-                </div>
-              </div>
-
             </div>
           </div>
 
-          {/* Right Form */}
+          {/* Right Form Card */}
           <div className="lg:col-span-7">
-            <div className="glass-panel rounded-3xl p-8 sm:p-10 border border-white/10 shadow-2xl">
+            <div className="sociallyin-card p-8 sm:p-10 shadow-2xl bg-white">
               
               {submitted ? (
                 <div className="text-center py-12 space-y-4">
-                  <div className="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto border border-emerald-500/30">
+                  <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
                     <CheckCircle2 className="w-10 h-10" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white">Strategy Proposal Submitted!</h3>
-                  <p className="text-gray-300 text-sm max-w-md mx-auto">
-                    Your details have been logged directly into our Notion Database API. Our senior strategy lead will contact you via WhatsApp shortly!
+                  <h3 className="font-heading text-3xl font-bold text-sociallyin-blue uppercase">PROPOSAL REQUEST RECEIVED!</h3>
+                  <p className="text-gray-600 text-sm max-w-md mx-auto font-medium">
+                    Your details have been logged into our Notion CRM. Our senior strategist will message you on WhatsApp shortly!
                   </p>
                   <button
                     onClick={() => setSubmitted(false)}
-                    className="mt-4 px-6 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-bold uppercase tracking-wider"
+                    className="btn-yellow text-sm px-6 py-2.5 rounded-md"
                   >
-                    Submit Another Request
+                    SUBMIT ANOTHER REQUEST
                   </button>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   
-                  <div className="flex items-center justify-between border-b border-white/10 pb-4">
-                    <h3 className="text-xl font-bold text-white">Get Custom Growth Plan</h3>
-                    <span className="text-xs text-emerald-400 font-semibold flex items-center gap-1">
-                      <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                      Notion CRM Connected
+                  <div className="flex items-center justify-between border-b border-gray-200 pb-4">
+                    <h3 className="font-heading text-2xl font-bold text-sociallyin-blue uppercase">FREE STRATEGY PROPOSAL</h3>
+                    <span className="text-xs text-emerald-700 font-bold uppercase tracking-wider bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
+                      ● Notion CRM Connected
                     </span>
                   </div>
 
                   {errorMsg && (
-                    <div className="p-4 rounded-xl bg-rose-500/10 border border-rose-500/20 text-rose-400 text-xs flex items-center gap-2">
+                    <div className="p-4 rounded-lg bg-red-50 border border-red-200 text-red-700 text-xs font-semibold flex items-center gap-2">
                       <AlertCircle className="w-4 h-4 shrink-0" />
                       <span>{errorMsg}</span>
                     </div>
                   )}
 
                   <div className="grid sm:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <label className="text-xs font-bold uppercase tracking-wider text-gray-300">Your Full Name *</label>
+                    <div className="space-y-1 text-left">
+                      <label className="font-heading text-sm font-bold uppercase text-sociallyin-blue">Your Full Name *</label>
                       <input 
                         type="text" 
                         name="name" 
@@ -198,12 +178,12 @@ export default function ProposalForm() {
                         value={formData.name} 
                         onChange={handleChange}
                         placeholder="e.g. Talal Ahmad"
-                        className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 text-sm"
+                        className="w-full px-4 py-3 rounded-lg bg-[#F8FAFC] border border-gray-300 text-sociallyin-textDark placeholder-gray-400 focus:outline-none focus:border-sociallyin-blue text-sm font-medium"
                       />
                     </div>
 
-                    <div className="space-y-2">
-                      <label className="text-xs font-bold uppercase tracking-wider text-gray-300">Phone / WhatsApp Number *</label>
+                    <div className="space-y-1 text-left">
+                      <label className="font-heading text-sm font-bold uppercase text-sociallyin-blue">Phone / WhatsApp Number *</label>
                       <input 
                         type="tel" 
                         name="phone" 
@@ -211,31 +191,31 @@ export default function ProposalForm() {
                         value={formData.phone} 
                         onChange={handleChange}
                         placeholder="e.g. 0331-6996815"
-                        className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 text-sm"
+                        className="w-full px-4 py-3 rounded-lg bg-[#F8FAFC] border border-gray-300 text-sociallyin-textDark placeholder-gray-400 focus:outline-none focus:border-sociallyin-blue text-sm font-medium"
                       />
                     </div>
                   </div>
 
                   <div className="grid sm:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <label className="text-xs font-bold uppercase tracking-wider text-gray-300">Email Address</label>
+                    <div className="space-y-1 text-left">
+                      <label className="font-heading text-sm font-bold uppercase text-sociallyin-blue">Email Address</label>
                       <input 
                         type="email" 
                         name="email" 
                         value={formData.email} 
                         onChange={handleChange}
                         placeholder="e.g. client@company.com"
-                        className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 text-sm"
+                        className="w-full px-4 py-3 rounded-lg bg-[#F8FAFC] border border-gray-300 text-sociallyin-textDark placeholder-gray-400 focus:outline-none focus:border-sociallyin-blue text-sm font-medium"
                       />
                     </div>
 
-                    <div className="space-y-2">
-                      <label className="text-xs font-bold uppercase tracking-wider text-gray-300">Target Industry Vertical *</label>
+                    <div className="space-y-1 text-left">
+                      <label className="font-heading text-sm font-bold uppercase text-sociallyin-blue">Target Industry Vertical *</label>
                       <select 
                         name="vertical" 
                         value={formData.vertical} 
                         onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-xl bg-[#121320] border border-white/10 text-white focus:outline-none focus:border-blue-500 text-sm"
+                        className="w-full px-4 py-3 rounded-lg bg-[#F8FAFC] border border-gray-300 text-sociallyin-textDark focus:outline-none focus:border-sociallyin-blue text-sm font-semibold"
                       >
                         <option value="Immigration & Visa Consultancy">Immigration & Visa Consultancy</option>
                         <option value="Law Firm & Legal Practice">Law Firm & Legal Practice</option>
@@ -248,13 +228,13 @@ export default function ProposalForm() {
                   </div>
 
                   <div className="grid sm:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <label className="text-xs font-bold uppercase tracking-wider text-gray-300">Estimated Monthly Budget</label>
+                    <div className="space-y-1 text-left">
+                      <label className="font-heading text-sm font-bold uppercase text-sociallyin-blue">Monthly Investment Budget</label>
                       <select 
                         name="budgetTier" 
                         value={formData.budgetTier} 
                         onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-xl bg-[#121320] border border-white/10 text-white focus:outline-none focus:border-blue-500 text-sm"
+                        className="w-full px-4 py-3 rounded-lg bg-[#F8FAFC] border border-gray-300 text-sociallyin-textDark focus:outline-none focus:border-sociallyin-blue text-sm font-semibold"
                       >
                         <option value="$300 - $500 / month (Starter Plan)">$300 - $500 / month (PKR 85k-140k)</option>
                         <option value="$600 - $1,000 / month (Scale Blueprint)">$600 - $1,000 / month (PKR 170k-280k)</option>
@@ -262,13 +242,13 @@ export default function ProposalForm() {
                       </select>
                     </div>
 
-                    <div className="space-y-2">
-                      <label className="text-xs font-bold uppercase tracking-wider text-gray-300">Primary Goal</label>
+                    <div className="space-y-1 text-left">
+                      <label className="font-heading text-sm font-bold uppercase text-sociallyin-blue">Primary Business Goal</label>
                       <select 
                         name="goals" 
                         value={formData.goals} 
                         onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-xl bg-[#121320] border border-white/10 text-white focus:outline-none focus:border-blue-500 text-sm"
+                        className="w-full px-4 py-3 rounded-lg bg-[#F8FAFC] border border-gray-300 text-sociallyin-textDark focus:outline-none focus:border-sociallyin-blue text-sm font-semibold"
                       >
                         <option value="Qualified Lead Generation">Qualified Lead Generation</option>
                         <option value="Brand Authority & Legal Consultations">Brand Authority & Consultations</option>
@@ -279,29 +259,29 @@ export default function ProposalForm() {
                     </div>
                   </div>
 
-                  <div className="space-y-2">
-                    <label className="text-xs font-bold uppercase tracking-wider text-gray-300">Tell Us About Your Project & Requirements</label>
+                  <div className="space-y-1 text-left">
+                    <label className="font-heading text-sm font-bold uppercase text-sociallyin-blue">Tell Us About Your Project & Requirements</label>
                     <textarea 
                       name="notes" 
-                      rows={4}
+                      rows={3}
                       value={formData.notes} 
                       onChange={handleChange}
-                      placeholder="Mention any current website links, social channels, or specific targets..."
-                      className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 text-sm"
+                      placeholder="Mention any current website links, target goals, or questions..."
+                      className="w-full px-4 py-3 rounded-lg bg-[#F8FAFC] border border-gray-300 text-sociallyin-textDark placeholder-gray-400 focus:outline-none focus:border-sociallyin-blue text-sm font-medium"
                     />
                   </div>
 
                   <button
                     type="submit"
                     disabled={loading}
-                    className="w-full flex items-center justify-center gap-3 py-4 rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500 text-white font-bold text-base shadow-xl shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-[1.01] active:scale-[0.99] transition-all disabled:opacity-60"
+                    className="btn-yellow text-xl w-full justify-center py-4 rounded-md shadow-xl"
                   >
                     {loading ? (
-                      <span>Sending To Notion...</span>
+                      <span>SENDING TO NOTION...</span>
                     ) : (
                       <>
                         <Send className="w-5 h-5" />
-                        <span>Submit Strategy Request & Open WhatsApp</span>
+                        <span>SUBMIT PROPOSAL & OPEN WHATSAPP</span>
                       </>
                     )}
                   </button>

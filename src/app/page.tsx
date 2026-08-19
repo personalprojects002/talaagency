@@ -1,10 +1,12 @@
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
-import VerticalsShowcase from '@/components/VerticalsShowcase';
+import ProblemSection from '@/components/ProblemSection';
+import WaveAboutSection from '@/components/WaveAboutSection';
+import ServicesGrid from '@/components/ServicesGrid';
 import BudgetPlanner from '@/components/BudgetPlanner';
 import StudioShowcase from '@/components/StudioShowcase';
-import ServicesGrid from '@/components/ServicesGrid';
+import WhyChooseSection from '@/components/WhyChooseSection';
 import CaseStudies from '@/components/CaseStudies';
 import AcademyShowcase from '@/components/AcademyShowcase';
 import Testimonials from '@/components/Testimonials';
@@ -13,13 +15,15 @@ import Footer from '@/components/Footer';
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-[#08080C] text-gray-100 overflow-x-hidden selection:bg-blue-600 selection:text-white">
+    <main className="min-h-screen bg-white text-sociallyin-textDark font-sans overflow-x-hidden selection:bg-sociallyin-yellow selection:text-black">
       <Navbar />
       <Hero />
-      <VerticalsShowcase />
+      <ProblemSection />
+      <WaveAboutSection />
+      <ServicesGrid />
       <BudgetPlanner />
       <StudioShowcase />
-      <ServicesGrid />
+      <WhyChooseSection />
       <CaseStudies />
       <AcademyShowcase />
       <Testimonials />

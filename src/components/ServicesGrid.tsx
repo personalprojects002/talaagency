@@ -1,112 +1,116 @@
 'use client';
 
 import React from 'react';
-import { Globe, Video, Megaphone, Youtube, ShoppingCart, Share2, ArrowRight, Check } from 'lucide-react';
+import { ArrowRight, Check } from 'lucide-react';
 
-const servicesList = [
+const servicesData = [
   {
-    icon: Globe,
-    title: 'Website Building & Web Development',
-    color: 'from-blue-500 to-cyan-400',
-    description: 'Custom, ultra-fast websites and landing pages built with React & Next.js. Engineered specifically to convert mobile visitors into WhatsApp consultations and direct phone leads.',
-    features: ['Custom Mobile-Optimized Design', 'Instant WhatsApp Integration', 'SEO & Speed Performance', 'Lead Form Automation']
+    title: 'SOCIAL MEDIA STRATEGY & CONSULTING',
+    bullets: [
+      'Building Your Roadmap for Social Success',
+      'Target Audience & Competitor Analysis',
+      'Platform Selection & Content Pillars',
+      'ROI & Lead Goal Setting'
+    ]
   },
   {
-    icon: Video,
-    title: 'In-House Studio Video Production',
-    color: 'from-purple-500 to-indigo-400',
-    description: 'Cinematic 4K short-form video reels, shorts, podcasts, and commercial ads shot in our studio with professional cameras, lighting, and sound gear.',
-    features: ['High-Converting Scripting', 'Studio Shoot & Lighting', 'Color Grading & Motion Graphics', 'Subtitles & Sound Design']
+    title: 'SOCIAL CONTENT PRODUCTION',
+    bullets: [
+      'In-House 4K Studio Video Production',
+      'Engaging Reels, Shorts & Ad Creatives',
+      'Graphic Design, Branding & Thumbnails',
+      'Custom Scripting & Post-Production'
+    ]
   },
   {
-    icon: Share2,
-    title: 'Full Social Media Management',
-    color: 'from-cyan-500 to-teal-400',
-    description: 'Complete daily management of Facebook, Instagram, LinkedIn, and TikTok. We handle graphic design, caption copywriting, scheduling, and community response.',
-    features: ['Daily Post Creation', 'Brand Voice & Copywriting', 'Comment & DM Response', 'Monthly Performance Audits']
+    title: 'SOCIAL MEDIA MANAGEMENT & COMMUNITY',
+    bullets: [
+      'Consistent Posting Across All Platforms',
+      'Proactive Community DM & Comment Management',
+      'Brand Voice & Reputation Monitoring',
+      'Monthly Analytics & Growth Audits'
+    ]
   },
   {
-    icon: Megaphone,
-    title: 'Paid Social & Lead Ads (Meta/TikTok/Google)',
-    color: 'from-emerald-500 to-green-400',
-    description: 'Data-backed ad campaigns targeting qualified prospects for Immigration Consultants, Law Firms, Academies, and E-Commerce. Focused on Cost-Per-Lead and ROAS.',
-    features: ['Audience & Location Targeting', 'High-Converting Ad Creatives', 'A/B Split Testing', 'Budget Optimization']
+    title: 'PAID SOCIAL ADVERTISING',
+    bullets: [
+      'Targeted Lead Campaigns for Consultants & Lawyers',
+      'Meta, TikTok & Google Ads Optimization',
+      'A/B Creative Testing & Retargeting',
+      'High-ROAS E-Commerce Sales Funnels'
+    ]
   },
   {
-    icon: Youtube,
-    title: 'YouTube Automation & SEO Growth',
-    color: 'from-rose-500 to-red-400',
-    description: 'End-to-end YouTube channel growth. Niche strategy, video editing, thumbnail design, keyword SEO, and monetization management.',
-    features: ['Topic Research & Scripting', 'Professional Video Editing', 'High-CTR Custom Thumbnails', 'YouTube SEO & Monetization']
+    title: 'INFLUENCER & YOUTUBE AUTOMATION',
+    bullets: [
+      'YouTube Channel Setup & Monetization',
+      'High-CTR Custom Thumbnail Design',
+      'Influencer Vetting & Campaign Strategy',
+      'Performance Measurement & Reporting'
+    ]
   },
   {
-    icon: ShoppingCart,
-    title: 'E-Commerce & Amazon Store Management',
-    color: 'from-amber-500 to-orange-400',
-    description: 'Product listing optimization, product video shoots, Shopify store setup, and targeted Meta/TikTok ad campaigns to scale sales.',
-    features: ['Product Video Ads', 'Shopify Store Customization', 'Amazon Listing & Ads', 'Retargeting Funnels']
+    title: 'WEBSITE & NOTION CRM INTEGRATION',
+    bullets: [
+      'Custom Responsive Next.js / React Websites',
+      'Direct WhatsApp Consultation Booking',
+      'Automated Notion Database Lead Capture',
+      'Mobile Conversion Funnel Optimization'
+    ]
   }
 ];
 
 export default function ServicesGrid() {
   return (
-    <section id="services" className="py-24 bg-[#08080C] relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="services" className="py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-4">
-          <span className="text-xs font-extrabold uppercase tracking-widest text-blue-400">
-            End-To-End Growth Services
-          </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
-            Everything You Need To Control Your Market Online.
-          </h2>
-          <p className="text-gray-300 text-base sm:text-lg">
-            We manage your entire digital presence under one roof — so you never have to coordinate between multiple flaky freelancers again.
-          </p>
-        </div>
+        {/* Headline with Yellow Highlight Mark matching Image 1 */}
+        <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-sociallyin-blue uppercase tracking-tight mb-14">
+          <span className="yellow-mark">SOCIAL MEDIA SERVICES</span> : STRATEGY, PRODUCTION, ACTIVATION & COMMUNITY
+        </h2>
 
-        {/* Services Grid */}
-        <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {servicesList.map((srv, idx) => {
-            const Icon = srv.icon;
-            return (
-              <div 
-                key={idx}
-                className="glass-panel glass-panel-hover rounded-3xl p-8 border border-white/10 flex flex-col justify-between"
-              >
-                <div className="space-y-5">
-                  <div className={`w-14 h-14 rounded-2xl bg-gradient-to-r ${srv.color} p-[2px]`}>
-                    <div className="w-full h-full bg-[#0D0E17] rounded-[14px] flex items-center justify-center text-white">
-                      <Icon className="w-7 h-7" />
+        {/* 6 Light Blue Cards matching Image 1 */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {servicesData.map((srv, idx) => (
+            <div 
+              key={idx}
+              className="sociallyin-card p-8 flex flex-col justify-between text-left space-y-6"
+            >
+              <div className="space-y-4">
+                <h3 className="font-heading text-2xl font-bold text-sociallyin-blue uppercase tracking-wide leading-tight">
+                  {srv.title}
+                </h3>
+
+                <div className="space-y-2.5 pt-2 border-t border-blue-200">
+                  {srv.bullets.map((b, bIdx) => (
+                    <div key={bIdx} className="flex items-start gap-2 text-xs font-semibold text-sociallyin-textDark">
+                      <span className="w-1.5 h-1.5 rounded-full bg-sociallyin-blue mt-1.5 shrink-0"></span>
+                      <span>{b}</span>
                     </div>
-                  </div>
-
-                  <h3 className="text-xl font-bold text-white">{srv.title}</h3>
-                  <p className="text-sm text-gray-300 leading-relaxed">{srv.description}</p>
-
-                  <div className="space-y-2 pt-2 border-t border-white/5">
-                    {srv.features.map((feat, fIdx) => (
-                      <div key={fIdx} className="flex items-center gap-2 text-xs text-gray-300 font-medium">
-                        <Check className="w-3.5 h-3.5 text-blue-400 shrink-0" />
-                        <span>{feat}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="pt-6">
-                  <a 
-                    href="#proposal-form" 
-                    className="inline-flex items-center gap-2 text-xs font-bold text-blue-400 hover:text-blue-300 transition-colors uppercase tracking-wider"
-                  >
-                    <span>Request Service Strategy</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </a>
+                  ))}
                 </div>
               </div>
-            );
-          })}
+
+              <div className="pt-4">
+                <a 
+                  href="#proposal-form" 
+                  className="font-heading text-sm font-bold text-sociallyin-blue hover:text-sociallyin-darkBlue uppercase tracking-wider flex items-center gap-1"
+                >
+                  <span>REQUEST STRATEGY</span>
+                  <ArrowRight className="w-4 h-4 stroke-[3]" />
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* CTA Button matching Image 1 */}
+        <div className="mt-12">
+          <a href="#proposal-form" className="btn-yellow text-xl px-10 py-4 rounded-md shadow-xl">
+            <span>GET A FREE PROPOSAL</span>
+            <ArrowRight className="w-5 h-5 stroke-[3]" />
+          </a>
         </div>
 
       </div>
