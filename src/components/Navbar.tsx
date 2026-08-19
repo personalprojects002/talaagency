@@ -61,16 +61,16 @@ export default function Navbar() {
                 )}
               </Link>
 
-              {/* ABOUT Dropdown Menu */}
+              {/* ABOUT Dropdown Menu - Styled identically to SERVICES sub-items */}
               {activeDropdown === 'about' && (
-                <div className="absolute top-full left-0 w-64 p-4 nav-dropdown-box animate-dropdown z-50">
-                  <div className="space-y-2 font-gothic text-base font-normal tracking-wide text-sociallyin-textDark">
+                <div className="absolute top-full left-0 w-64 p-3.5 nav-dropdown-box animate-dropdown z-50 bg-white shadow-2xl border-2 border-sociallyin-blue rounded-xl">
+                  <div className="space-y-1 font-sans">
                     {aboutDropdownItems.map((item, idx) => (
                       <Link
                         key={idx}
                         href={item.href}
                         onClick={() => setActiveDropdown(null)}
-                        className="block text-sociallyin-textDark hover:text-sociallyin-blue hover:translate-x-1 transition-all"
+                        className="block p-2.5 rounded-lg text-xs font-bold text-slate-800 hover:text-sociallyin-blue hover:bg-blue-50 transition-all border-b border-gray-100 last:border-0 uppercase tracking-wide"
                       >
                         {item.label}
                       </Link>
