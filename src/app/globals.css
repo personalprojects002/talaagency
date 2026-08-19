@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800;900&family=Oswald:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=League+Gothic&family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,89 +6,110 @@
 
 :root {
   --font-inter: 'Inter', sans-serif;
-  --font-oswald: 'Oswald', sans-serif;
+  --font-league-gothic: 'League Gothic', 'Bebas Neue', sans-serif;
 }
 
 body {
   background-color: #FFFFFF;
-  color: #0B132B;
+  color: #0F172A;
   font-family: var(--font-inter);
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
-h1, h2, h3, .font-heading {
-  font-family: var(--font-oswald);
-  letter-spacing: 0.02em;
-}
-
-/* Yellow Highlighted Text Pill matching Sociallyin branding */
-.yellow-mark {
-  background-color: #FFD000;
-  color: #0B132B;
-  padding: 0.1em 0.35em;
-  border-radius: 4px;
-  display: inline;
-}
-
-.yellow-badge {
-  background-color: #FFD000;
-  color: #0B132B;
-  font-weight: 800;
-  padding: 6px 16px;
-  border-radius: 6px;
+/* Exact Condensed Headline Font from Image */
+h1, h2, h3, .font-heading, .font-gothic {
+  font-family: var(--font-league-gothic);
+  letter-spacing: 0.03em;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
 }
 
-/* Primary Yellow Button */
+/* Hero Headline Text Styles matching Image */
+.hero-title-blue {
+  color: #0066FF;
+  font-family: var(--font-league-gothic);
+  font-size: clamp(3.2rem, 7vw, 6.2rem);
+  line-height: 0.95;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.hero-title-yellow {
+  color: #FFD000;
+  font-family: var(--font-league-gothic);
+  font-size: clamp(3.2rem, 7vw, 6.2rem);
+  line-height: 0.95;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+}
+
+/* Yellow Underline Stroke underneath SOCIAL MEDIA matching Image */
+.yellow-underline-stroke {
+  position: relative;
+  display: inline-block;
+}
+
+.yellow-underline-stroke::after {
+  content: '';
+  position: absolute;
+  left: -2%;
+  bottom: -6px;
+  width: 104%;
+  height: 8px;
+  background-color: #FFD000;
+  border-radius: 4px;
+}
+
+/* Navbar Menu Font from Image */
+.nav-link-gothic {
+  font-family: var(--font-league-gothic);
+  font-size: 1.35rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #0066FF;
+  transition: color 0.2s ease;
+}
+
+.nav-link-gothic:hover {
+  color: #0047BA;
+}
+
+/* Yellow Button matching Image */
 .btn-yellow {
   background-color: #FFD000;
   color: #000000;
-  font-family: var(--font-oswald);
-  font-size: 1.125rem;
-  font-weight: 700;
+  font-family: var(--font-league-gothic);
+  font-size: 1.35rem;
+  font-weight: 400;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  padding: 14px 28px;
-  border-radius: 6px;
-  box-shadow: 0 4px 14px rgba(255, 208, 0, 0.4);
+  padding: 12px 28px;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(255, 208, 0, 0.35);
   transition: all 0.2s ease;
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  line-height: 1;
 }
 
 .btn-yellow:hover {
   background-color: #E6BC00;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 208, 0, 0.5);
+  box-shadow: 0 6px 20px rgba(255, 208, 0, 0.45);
 }
 
-/* Secondary Blue Button */
-.btn-blue {
-  background-color: #0066FF;
-  color: #FFFFFF;
-  font-family: var(--font-oswald);
-  font-size: 1.125rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  padding: 14px 28px;
-  border-radius: 6px;
-  box-shadow: 0 4px 14px rgba(0, 102, 255, 0.3);
-  transition: all 0.2s ease;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
+/* Dropdown Dialog Box */
+.nav-dropdown-box {
+  background: #F4F8FE;
+  border: 2px solid #93C5FD;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 102, 255, 0.18);
 }
 
-.btn-blue:hover {
-  background-color: #0047BA;
-  transform: translateY(-2px);
-}
-
-/* Sociallyin Light Blue Card */
 .sociallyin-card {
   background-color: #F4F8FE;
   border: 1.5px solid #C2DBFE;
@@ -100,21 +121,4 @@ h1, h2, h3, .font-heading {
   border-color: #0066FF;
   box-shadow: 0 12px 30px rgba(0, 102, 255, 0.12);
   transform: translateY(-4px);
-}
-
-/* Navigation Dropdown Box (Exact replica of Image 2 & 3) */
-.nav-dropdown-box {
-  background: #F4F8FE;
-  border: 2px solid #93C5FD;
-  border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0, 102, 255, 0.18);
-}
-
-/* Curved Arch Hero Image Mask */
-.arch-frame {
-  border-top-left-radius: 180px;
-  border-top-right-radius: 180px;
-  border-bottom-left-radius: 30px;
-  border-bottom-right-radius: 30px;
-  overflow: hidden;
 }

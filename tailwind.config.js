@@ -17,13 +17,14 @@ module.exports = {
           cardBorder: '#C2DBFE',
           yellow: '#FFD000',
           yellowHover: '#E6BC00',
-          textDark: '#0B132B',
+          textDark: '#0F172A',
           textMuted: '#475569',
         }
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
-        heading: ['Oswald', 'Bebas Neue', 'sans-serif'],
+        heading: ['"League Gothic"', '"Bebas Neue"', 'sans-serif'],
+        gothic: ['"League Gothic"', 'sans-serif'],
       },
       keyframes: {
         dropdown: {

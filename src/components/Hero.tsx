@@ -1,101 +1,97 @@
 'use client';
 
 import React from 'react';
-import { ArrowRight, Play } from 'lucide-react';
 
 export default function Hero() {
   return (
-    <section className="relative pt-28 pb-14 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center lg:text-left relative z-10">
+    <section className="relative pt-36 pb-20 bg-white overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         <div className="grid lg:grid-cols-12 gap-8 items-center">
           
-          {/* Left Column Text & CTAs */}
-          <div className="lg:col-span-7 space-y-5">
+          {/* Left Headline & Content matching image 100% */}
+          <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
             
-            {/* Headline */}
-            <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-sociallyin-blue tracking-tight leading-tight uppercase">
-              THE <span className="yellow-mark">SOCIAL MEDIA</span> AGENCY WITH AN IN-HOUSE STUDIO
+            {/* Headline with exact League Gothic font, blue & yellow underline stroke */}
+            <h1 className="leading-none">
+              <span className="hero-title-blue">THE </span>
+              <span className="yellow-underline-stroke hero-title-yellow">SOCIAL MEDIA</span>
+              <br />
+              <span className="hero-title-blue">AGENCY WITH AN IN-</span>
+              <br />
+              <span className="hero-title-blue">HOUSE STUDIO</span>
             </h1>
 
-            {/* Crisp Clear Description */}
-            <p className="text-base sm:text-lg text-sociallyin-textMuted font-medium leading-relaxed max-w-xl mx-auto lg:mx-0">
-              We engineer full social media growth engines for <strong className="text-sociallyin-textDark font-bold">Immigration Consultants, Law Firms, Academies, and E-Commerce Brands</strong> — combining 4K studio video production, custom web building, and high-ROAS ad campaigns built around your budget.
+            {/* Subhead matching image 100% */}
+            <p className="text-xl sm:text-2xl text-slate-700 font-sans leading-snug max-w-xl mx-auto lg:mx-0">
+              <strong className="text-sociallyin-blue font-extrabold">Stop Guessing, Start Growing:</strong> Partner with a Social Marketing Agency Focused on Your Bottom Line
             </p>
 
-            {/* CTAs */}
-            <div className="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+            {/* Yellow CTA Button matching image 100% */}
+            <div className="pt-2 flex justify-center lg:justify-start">
               <a 
                 href="#proposal-form" 
-                className="btn-yellow text-lg px-8 py-3.5 rounded-md shadow-lg"
+                className="btn-yellow text-xl px-8 py-3.5 rounded-xl shadow-xl"
               >
-                <span>GET FREE PROPOSAL</span>
-                <ArrowRight className="w-5 h-5 stroke-[3]" />
-              </a>
-
-              <a 
-                href="#studio" 
-                className="inline-flex items-center gap-2 font-heading text-base font-bold text-sociallyin-blue hover:text-sociallyin-darkBlue uppercase tracking-wider underline underline-offset-4"
-              >
-                <Play className="w-4 h-4 fill-sociallyin-blue" />
-                <span>EXPLORE IN-HOUSE STUDIO</span>
+                LET'S DRIVE GROWTH TOGETHER
               </a>
             </div>
 
-            {/* Compact Metrics */}
-            <div className="pt-4 grid grid-cols-3 gap-4 text-center lg:text-left border-t border-blue-100">
+            {/* Agency Trust Badges */}
+            <div className="pt-6 grid grid-cols-3 gap-4 text-center lg:text-left border-t border-gray-100 max-w-lg">
               <div>
-                <h4 className="font-heading text-2xl font-bold text-sociallyin-blue">500+</h4>
-                <p className="text-[11px] font-bold text-gray-500 uppercase tracking-wider">Brands Served</p>
+                <h4 className="font-gothic text-3xl font-normal text-sociallyin-blue">500+</h4>
+                <p className="text-[11px] font-bold text-gray-500 uppercase tracking-wider font-sans">Brands Served</p>
               </div>
               <div>
-                <h4 className="font-heading text-2xl font-bold text-sociallyin-yellow">IN-HOUSE</h4>
-                <p className="text-[11px] font-bold text-gray-500 uppercase tracking-wider">Studio Camera Crew</p>
+                <h4 className="font-gothic text-3xl font-normal text-sociallyin-yellow">IN-HOUSE</h4>
+                <p className="text-[11px] font-bold text-gray-500 uppercase tracking-wider font-sans">Studio Camera Crew</p>
               </div>
               <div>
-                <h4 className="font-heading text-2xl font-bold text-sociallyin-blue">PAKISTAN</h4>
-                <p className="text-[11px] font-bold text-gray-500 uppercase tracking-wider">Kamoke HQ & Global</p>
+                <h4 className="font-gothic text-3xl font-normal text-sociallyin-blue">PAKISTAN</h4>
+                <p className="text-[11px] font-bold text-gray-500 uppercase tracking-wider font-sans">Kamoke HQ & Global</p>
               </div>
             </div>
 
           </div>
 
-          {/* Right Column: Compact Arch Oval Frame */}
-          <div className="lg:col-span-5 flex justify-center">
-            <div className="relative w-full max-w-sm aspect-[4/5] bg-sociallyin-blue arch-frame p-5 flex flex-col items-center justify-center shadow-xl">
-              <div className="w-full h-full bg-white/10 rounded-xl backdrop-blur-sm p-3 border border-white/20 flex flex-col items-center justify-center text-center space-y-3">
-                
-                {/* Phone Mockup Frame */}
-                <div className="relative w-40 h-64 rounded-2xl bg-black border-4 border-white shadow-2xl overflow-hidden">
-                  <img 
-                    src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=600&h=900&fit=crop" 
-                    alt="In-House Studio Production" 
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-2.5 text-left">
-                    <span className="text-[9px] font-bold text-sociallyin-yellow uppercase tracking-widest">NVC STUDIO REEL</span>
-                    <p className="text-xs font-bold text-white leading-tight">Cinematic Shoot</p>
-                  </div>
-                </div>
+          {/* Right Side Oval Blob cutout & phone mockup matching image 100% */}
+          <div className="lg:col-span-5 relative flex flex-col items-center justify-center">
+            
+            {/* Blue Blob & Phone Container */}
+            <div className="relative w-full max-w-md aspect-[4/5] flex items-center justify-center">
+              
+              {/* Organic Blue Blob Shape */}
+              <div className="absolute inset-2 bg-sociallyin-blue rounded-[40%_60%_70%_30%/40%_50%_60%_50%] shadow-xl animate-pulse-slow" />
 
-                <div className="text-white space-y-0.5">
-                  <h3 className="font-heading text-lg font-bold uppercase tracking-wider">IN-HOUSE STUDIO CREW</h3>
-                  <p className="text-[11px] text-blue-100 font-medium">Kamoke, Gujranwala, Pakistan</p>
+              {/* Smartphone Mockup matching image */}
+              <div className="relative z-10 w-52 h-96 rounded-[36px] bg-black border-4 border-white shadow-2xl overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=600&h=900&fit=crop" 
+                  alt="Studio Video Reel Playback" 
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-3 text-left">
+                  <span className="text-[9px] font-bold text-sociallyin-yellow uppercase tracking-widest font-sans">NVC STUDIO REEL</span>
+                  <p className="font-gothic text-lg text-white leading-none uppercase">Cinematic Production</p>
                 </div>
-
               </div>
+
             </div>
+
+            {/* Hand-drawn line accent below mockup */}
+            <svg className="w-full max-w-sm h-6 text-gray-800 -mt-2" viewBox="0 0 300 20" fill="none">
+              <path d="M5 15 C 80 5, 220 25, 295 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            </svg>
+
           </div>
 
         </div>
 
-        {/* Compact Partner Logos */}
-        <div className="mt-10 pt-6 border-t border-gray-200">
-          <p className="text-center text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-4">
-            TRUSTED PARTNERS & CERTIFIED NETWORK
-          </p>
-          <div className="flex items-center justify-center gap-8 flex-wrap opacity-75 font-heading text-xl font-bold tracking-widest text-gray-700">
-            <span>ASUS</span>
+        {/* Partner Logos matching image 100% */}
+        <div className="mt-16 pt-8 border-t border-gray-200">
+          <div className="flex items-center justify-center gap-10 flex-wrap opacity-75 font-gothic text-2xl font-normal tracking-widest text-gray-700">
+            <span className="text-gray-900">ASUS</span>
             <span className="text-sociallyin-blue">SAMSUNG</span>
             <span className="text-blue-600">META PARTNER</span>
             <span className="text-black">TikTok Ads</span>

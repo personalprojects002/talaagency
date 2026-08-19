@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { ChevronDown, ChevronUp, Menu, X, ArrowRight } from 'lucide-react';
+import { ChevronDown, ChevronUp, Menu, X } from 'lucide-react';
 
 const servicesDropdownItems = [
   { label: 'SOCIAL MEDIA STRATEGY', href: '#services' },
@@ -28,19 +28,19 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 py-3.5 transition-all shadow-sm">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 py-3 transition-all">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           
-          {/* Logo: NVC ONLY as requested */}
+          {/* NVC Logo in League Gothic matching image */}
           <a href="#" className="flex items-center gap-2 group">
-            <span className="font-heading text-3xl font-extrabold text-sociallyin-blue tracking-wider group-hover:text-sociallyin-darkBlue transition-colors">
+            <span className="font-gothic text-4xl font-normal text-sociallyin-blue tracking-wider group-hover:text-sociallyin-darkBlue transition-colors leading-none">
               NVC
             </span>
           </a>
 
-          {/* Desktop Nav Links (HOME, AGENTS, ACADEMY & WhatsApp removed as requested) */}
-          <nav className="hidden lg:flex items-center gap-8 font-heading text-lg font-bold text-sociallyin-textDark tracking-wider uppercase">
+          {/* Nav Links in League Gothic matching image */}
+          <nav className="hidden lg:flex items-center gap-9 font-gothic text-2xl font-normal text-sociallyin-blue tracking-wider uppercase">
             
             {/* ABOUT Dropdown Trigger */}
             <div 
@@ -48,19 +48,19 @@ export default function Navbar() {
               onMouseEnter={() => setActiveDropdown('about')}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <button className="flex items-center gap-1 hover:text-sociallyin-blue transition-colors">
+              <button className="flex items-center gap-1 hover:text-sociallyin-darkBlue transition-colors">
                 <span>ABOUT</span>
                 {activeDropdown === 'about' ? (
                   <ChevronUp className="w-4 h-4 text-sociallyin-blue stroke-[3]" />
                 ) : (
-                  <ChevronDown className="w-4 h-4 text-gray-500 stroke-[3]" />
+                  <ChevronDown className="w-4 h-4 text-sociallyin-blue stroke-[3]" />
                 )}
               </button>
 
               {/* ABOUT Dropdown Dialog Box */}
               {activeDropdown === 'about' && (
                 <div className="absolute top-full left-0 w-72 p-5 nav-dropdown-box animate-dropdown z-50">
-                  <div className="space-y-3 font-heading text-base font-bold tracking-wide">
+                  <div className="space-y-3 font-gothic text-xl font-normal tracking-wide text-sociallyin-textDark">
                     {aboutDropdownItems.map((item, idx) => (
                       <a
                         key={idx}
@@ -82,19 +82,19 @@ export default function Navbar() {
               onMouseEnter={() => setActiveDropdown('services')}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <button className="flex items-center gap-1 hover:text-sociallyin-blue transition-colors">
+              <button className="flex items-center gap-1 hover:text-sociallyin-darkBlue transition-colors">
                 <span>SERVICES</span>
                 {activeDropdown === 'services' ? (
                   <ChevronUp className="w-4 h-4 text-sociallyin-blue stroke-[3]" />
                 ) : (
-                  <ChevronDown className="w-4 h-4 text-gray-500 stroke-[3]" />
+                  <ChevronDown className="w-4 h-4 text-sociallyin-blue stroke-[3]" />
                 )}
               </button>
 
               {/* SERVICES Dropdown Dialog Box */}
               {activeDropdown === 'services' && (
                 <div className="absolute top-full -left-4 w-80 p-6 nav-dropdown-box animate-dropdown z-50">
-                  <div className="space-y-3 font-heading text-[15px] font-bold tracking-wide text-sociallyin-textDark">
+                  <div className="space-y-2.5 font-gothic text-xl font-normal tracking-wide text-sociallyin-textDark">
                     {servicesDropdownItems.map((item, idx) => (
                       <a
                         key={idx}
@@ -110,21 +110,21 @@ export default function Navbar() {
               )}
             </div>
 
-            <a href="#studio" className="hover:text-sociallyin-blue transition-colors">
+            <a href="#studio" className="hover:text-sociallyin-darkBlue transition-colors">
               STUDIOS
             </a>
 
-            <a href="#case-studies" className="hover:text-sociallyin-blue transition-colors">
+            <a href="#case-studies" className="hover:text-sociallyin-darkBlue transition-colors">
               WORK
             </a>
 
           </nav>
 
-          {/* Right Action Button (FREE PROPOSAL) */}
+          {/* FREE PROPOSAL Yellow Button in League Gothic matching image */}
           <div className="hidden lg:flex items-center">
             <a
               href="#proposal-form"
-              className="btn-yellow text-sm px-6 py-2.5 rounded-md"
+              className="btn-yellow text-lg px-6 py-2 rounded-xl"
             >
               <span>FREE PROPOSAL</span>
             </a>
@@ -133,20 +133,20 @@ export default function Navbar() {
           {/* Mobile Toggle */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 text-sociallyin-textDark hover:text-sociallyin-blue"
+            className="lg:hidden p-2 text-sociallyin-blue"
           >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {mobileMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
           </button>
 
         </div>
       </div>
 
-      {/* Mobile Drawer */}
+      {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white border-b border-gray-200 px-4 pt-4 pb-6 space-y-3 font-heading text-lg font-bold">
-          <a href="#about" onClick={() => setMobileMenuOpen(false)} className="block text-sociallyin-textDark">ABOUT</a>
+        <div className="lg:hidden bg-white border-b border-gray-200 px-4 pt-4 pb-6 space-y-3 font-gothic text-2xl">
+          <a href="#about" onClick={() => setMobileMenuOpen(false)} className="block text-sociallyin-blue">ABOUT</a>
           
-          <div className="pl-3 border-l-2 border-sociallyin-blue space-y-2 text-sm font-sans font-semibold text-gray-700">
+          <div className="pl-3 border-l-2 border-sociallyin-blue space-y-2 text-lg font-gothic text-sociallyin-textDark">
             {servicesDropdownItems.map((item, idx) => (
               <a key={idx} href={item.href} onClick={() => setMobileMenuOpen(false)} className="block hover:text-sociallyin-blue">
                 • {item.label}
@@ -154,11 +154,11 @@ export default function Navbar() {
             ))}
           </div>
 
-          <a href="#studio" onClick={() => setMobileMenuOpen(false)} className="block text-sociallyin-textDark">STUDIOS</a>
-          <a href="#case-studies" onClick={() => setMobileMenuOpen(false)} className="block text-sociallyin-textDark">WORK</a>
+          <a href="#studio" onClick={() => setMobileMenuOpen(false)} className="block text-sociallyin-blue">STUDIOS</a>
+          <a href="#case-studies" onClick={() => setMobileMenuOpen(false)} className="block text-sociallyin-blue">WORK</a>
 
           <div className="pt-3">
-            <a href="#proposal-form" onClick={() => setMobileMenuOpen(false)} className="btn-yellow text-center w-full justify-center">
+            <a href="#proposal-form" onClick={() => setMobileMenuOpen(false)} className="btn-yellow text-center w-full justify-center text-xl">
               FREE PROPOSAL
             </a>
           </div>
