@@ -5,27 +5,27 @@ import React from 'react';
 export default function Hero() {
   return (
     <section className="relative pt-32 pb-16 bg-white overflow-hidden">
-      {/* Container with max-w-6xl and generous side padding for breathing room on both ends */}
-      <div className="max-w-6xl mx-auto px-6 lg:px-12 relative z-10">
+      {/* Container with max-w-7xl and generous side margins */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
         
         <div className="grid lg:grid-cols-12 gap-8 items-center">
           
-          {/* Left Headline & Content matching image */}
-          <div className="lg:col-span-7 space-y-5 text-center lg:text-left">
+          {/* Left Headline & Content with 50px left padding as requested */}
+          <div className="lg:col-span-7 space-y-5 text-center lg:text-left pl-4 lg:pl-[50px]">
             
-            {/* Headline with exact League Gothic font, blue & yellow underline stroke */}
+            {/* Headline with exact League Gothic font, blue & yellow underline stroke, updated for NVC agency */}
             <h1 className="leading-none">
               <span className="hero-title-blue">THE </span>
               <span className="yellow-underline-stroke hero-title-yellow">SOCIAL MEDIA</span>
               <br />
-              <span className="hero-title-blue">AGENCY WITH AN IN-</span>
+              <span className="hero-title-blue">AGENCY DRIVING</span>
               <br />
-              <span className="hero-title-blue">HOUSE STUDIO</span>
+              <span className="hero-title-blue">MEASURABLE GROWTH</span>
             </h1>
 
-            {/* Subhead matching image 100% */}
+            {/* Subhead matching image */}
             <p className="text-lg sm:text-xl text-slate-700 font-sans leading-relaxed max-w-lg mx-auto lg:mx-0">
-              <strong className="text-sociallyin-blue font-extrabold">Stop Guessing, Start Growing:</strong> Partner with a Social Marketing Agency Focused on Your Bottom Line
+              <strong className="text-sociallyin-blue font-extrabold">Stop Guessing, Start Growing:</strong> Partner with Next Vision Creators (NVC) — A Social Marketing Agency Focused on Your Bottom Line
             </p>
 
             {/* Yellow CTA Button */}
@@ -45,8 +45,8 @@ export default function Hero() {
                 <p className="text-[11px] font-bold text-gray-500 uppercase tracking-wider font-sans">Brands Served</p>
               </div>
               <div>
-                <h4 className="font-gothic text-3xl font-normal text-sociallyin-yellow">IN-HOUSE</h4>
-                <p className="text-[11px] font-bold text-gray-500 uppercase tracking-wider font-sans">Studio Camera Crew</p>
+                <h4 className="font-gothic text-3xl font-normal text-sociallyin-yellow">100%</h4>
+                <p className="text-[11px] font-bold text-gray-500 uppercase tracking-wider font-sans">Custom Content</p>
               </div>
               <div>
                 <h4 className="font-gothic text-3xl font-normal text-sociallyin-blue">PAKISTAN</h4>
@@ -69,12 +69,12 @@ export default function Hero() {
               <div className="relative z-10 w-48 h-88 rounded-[36px] bg-black border-4 border-white shadow-2xl overflow-hidden">
                 <img 
                   src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=600&h=900&fit=crop" 
-                  alt="Studio Video Reel Playback" 
+                  alt="Social Media Reel Campaign" 
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-3 text-left">
-                  <span className="text-[9px] font-bold text-sociallyin-yellow uppercase tracking-widest font-sans">NVC STUDIO REEL</span>
-                  <p className="font-gothic text-lg text-white leading-none uppercase">Cinematic Production</p>
+                  <span className="text-[9px] font-bold text-sociallyin-yellow uppercase tracking-widest font-sans">NVC CAMPAIGNS</span>
+                  <p className="font-gothic text-lg text-white leading-none uppercase">High-ROAS Ad Strategy</p>
                 </div>
               </div>
 
