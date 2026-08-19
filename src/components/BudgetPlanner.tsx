@@ -42,6 +42,16 @@ const budgetTiers = [
     studio: 'Unlimited Monthly Video Reel Production & Creative Assets',
     social: '360° Omnichannel Execution + Retargeting Funnels + Campaign Manager',
     blueprint: 'Complete market dominance package for established firms demanding maximum ROI & brand supremacy.'
+  },
+  {
+    id: 'custom',
+    name: 'Custom Flexible Budget Suite',
+    usd: 'Custom Budget Range',
+    popular: false,
+    website: 'Tailored Web & Landing Page Architecture to Exact Needs',
+    studio: 'Custom Video Production Schedule & Specialized Ad Creatives',
+    social: 'Flexible Multi-Channel Handling & Bespoke Ad Campaign Budgets',
+    blueprint: 'Bespoke execution plan structured around your unique budget and business requirements.'
   }
 ];
 
@@ -106,7 +116,7 @@ export default function BudgetPlanner() {
               </div>
             </div>
 
-            {/* Step 2: Monthly Investment Budget */}
+            {/* Step 2: Monthly Investment Budget (With Custom Range Option) */}
             <div className="sociallyin-card p-4 space-y-2 bg-[#F8FAFC] border border-blue-200">
               <label className="font-gothic text-lg text-sociallyin-blue uppercase flex items-center gap-1.5">
                 <DollarSign className="w-4 h-4 text-sociallyin-blue" />
@@ -137,7 +147,7 @@ export default function BudgetPlanner() {
                     </div>
 
                     <div className="text-right shrink-0">
-                      <span className="font-gothic text-lg text-sociallyin-blue font-bold">{tier.usd}</span>
+                      <span className="font-gothic text-base text-sociallyin-blue font-bold">{tier.usd}</span>
                     </div>
                   </button>
                 ))}

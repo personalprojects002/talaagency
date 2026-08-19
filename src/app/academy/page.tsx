@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { 
-  GraduationCap, Video, Palette, Youtube, Megaphone, CheckCircle2, ArrowRight, MessageSquare, Award, Sparkles 
+  Sparkles, CheckCircle2, MessageSquare 
 } from 'lucide-react';
 
 const coursesData = [
@@ -39,22 +39,22 @@ export default function AcademyPage() {
 
       {/* Hero Banner for NVC Academy */}
       <section className="pt-36 pb-20 bg-white">
-        <div className="max-w-6xl mx-auto px-6 lg:px-12 text-center">
+        <div className="max-w-6xl mx-auto px-4 sm:px-8 text-center">
           
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-sociallyin-blue font-gothic text-xl font-normal uppercase tracking-wider mb-6">
             <Sparkles className="w-4 h-4 fill-sociallyin-blue" />
             <span>NVC ACADEMY — SKILL EMPOWERMENT</span>
           </div>
 
-          <h1 className="font-gothic text-5xl sm:text-6xl lg:text-7xl font-normal text-sociallyin-blue uppercase tracking-tight leading-none mb-6">
+          <h1 className="font-gothic text-4xl sm:text-5xl lg:text-6xl font-normal text-sociallyin-blue uppercase tracking-tight leading-none mb-6">
             TRAINING NEXT-GEN CREATORS & <span className="yellow-underline-stroke hero-title-yellow">DIGITAL TALENT.</span>
           </h1>
 
-          <p className="text-lg sm:text-xl text-slate-600 font-sans max-w-3xl mx-auto font-medium leading-relaxed mb-12">
+          <p className="text-base sm:text-lg text-slate-600 font-sans max-w-3xl mx-auto font-medium leading-relaxed mb-12">
             Beyond agency services, NVC operates a specialized training academy in Kamoke, Gujranwala, Pakistan. We train passionate youth in video editing, graphic design, and YouTube SEO — empowering them with high-income digital skills.
           </p>
 
-          {/* 2 Key Stats Badges matching user request */}
+          {/* 2 Key Stats Badges */}
           <div className="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto mb-16">
             <div className="sociallyin-card p-6 text-center bg-[#F4F8FE] border-2 border-[#C2DBFE]">
               <h3 className="font-gothic text-4xl text-sociallyin-blue">300+</h3>
@@ -105,21 +105,22 @@ export default function AcademyPage() {
             </div>
           </div>
 
-          {/* WhatsApp Enrollment CTA matching user request */}
-          <div className="sociallyin-card p-10 bg-sociallyin-blue text-white rounded-3xl space-y-6 text-center max-w-3xl mx-auto shadow-2xl">
-            <h3 className="font-gothic text-4xl font-normal uppercase leading-none">
+          {/* High-Contrast Visible CTA Banner for Academy */}
+          <div className="sociallyin-card p-8 sm:p-12 bg-[#0F172A] text-white rounded-3xl space-y-6 text-center max-w-3xl mx-auto shadow-2xl border-4 border-[#FFD000]">
+            <h3 className="font-gothic text-3xl sm:text-4xl lg:text-5xl font-normal uppercase leading-tight text-[#FFD000]">
               READY TO LEARN HIGH-INCOME CREATOR SKILLS?
             </h3>
-            <p className="text-base text-blue-100 font-sans max-w-xl mx-auto font-medium">
+            
+            <p className="text-sm sm:text-base text-slate-200 font-sans max-w-xl mx-auto font-medium leading-relaxed">
               Join our upcoming hands-on physical & online batch in Kamoke, Gujranwala. Get trained directly on real studio camera gear and client video projects.
             </p>
 
-            <div>
+            <div className="pt-2">
               <a 
                 href="https://wa.me/923316996815?text=Hello%20NVC%20Academy!%20I%27m%20interested%20in%20enrolling%20in%20a%20course."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-yellow text-xl px-10 py-4 rounded-xl shadow-2xl inline-flex items-center gap-3"
+                className="btn-yellow text-lg sm:text-xl px-8 py-3.5 rounded-xl shadow-2xl inline-flex items-center gap-3"
               >
                 <MessageSquare className="w-6 h-6" />
                 <span>ENROLL IN NVC ACADEMY VIA WHATSAPP</span>

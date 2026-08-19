@@ -38,10 +38,10 @@ export default function Hero() {
               </a>
             </div>
 
-            {/* Compact Agency Trust Badges */}
+            {/* Agency Trust Badges with 25+ Brands Served */}
             <div className="pt-4 grid grid-cols-3 gap-3 text-center lg:text-left border-t border-gray-100 max-w-md">
               <div>
-                <h4 className="font-gothic text-2xl font-normal text-sociallyin-blue">500+</h4>
+                <h4 className="font-gothic text-2xl font-normal text-sociallyin-blue">25+</h4>
                 <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wider font-sans">Brands Served</p>
               </div>
               <div>
